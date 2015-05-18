@@ -91,10 +91,7 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     '''Register the plugin's functions above as a template helper function.'''
 
     return {
-      'odm_library_set_in_library': set_in_library,
-      'odm_library_get_in_library': get_in_library,
-      'odm_library_library_fields': library_fields,
-      'odm_library_is_library_orga': is_library_orga
+      'odm_library_library_fields': library_fields
     }
 
   def _modify_package_schema_write(self, schema):
@@ -111,7 +108,7 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     return schema
 
   def _modify_package_schema_read(self, schema):
-    
+
     for library_field in odm_library_helper.library_fields:
       validators_and_converters = [toolkit.get_converter('convert_from_extras'),toolkit.get_validator('ignore_missing')]
       if library_field[2]:
