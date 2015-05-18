@@ -1,0 +1,3 @@
+*.pyc
+.remote-sync.json
+ckanext_odm_library.egg-info
