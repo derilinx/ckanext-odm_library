@@ -5,4 +5,4 @@ from ckan.lib.base import BaseController
 
 class ThemeController(BaseController):
   def library(self):
-    return h.redirect_to(controller='package', type='library_record', action='search')
+    return h.redirect_to(controller='package', type='library_record', action='read')

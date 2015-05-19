@@ -15,7 +15,6 @@ import collections
 
 log = logging.getLogger(__name__)
 
-
 def library_fields():
   '''Return a list of library fields'''
 
