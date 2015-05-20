@@ -25,3 +25,24 @@ library_fields = [
 ('marc21_850','Institution',False),
 ('marc21_852','Location',False)
 ]
+
+odc_fields = [
+('file_name_kh','File (Khmer)',False),
+('file_name_en','File (English)',False),
+('adopted_date','Adopted Date',False),
+('number_en','Number (English)',False),
+('number_kh','Number (Khmer)',False),
+('published_date','Publication date',False),
+('published_under','Published under',False)
+]
+
+metadata_fields = [
+('odm_language','Language',True),
+('odm_date_created','Date Created',True),
+('odm_date_uploaded','Date Uploaded',True),
+('odm_spatial_range','Spatial Range',True),
+('odm_process','Process(es)',True),
+('odm_source','Source(s)',True),
+('odm_contact','Contact',True),
+('odm_contact_email','Contact Email',True)
+]
