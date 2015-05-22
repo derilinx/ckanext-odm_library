@@ -22,6 +22,11 @@ class LibraryController(PackageController):
 
     log.debug('LibraryController search')
 
+    def remove_field(key, value=None, replace=None):
+      return h.remove_url_param(key, value=value, replace=replace,controller='ckanext.odm_library.controller:LibraryController', type='library_record', action='search')
+
+    c.remove_field = remove_field
+
     return super(LibraryController, self).search()
 
   def read(self, id, format='html'):

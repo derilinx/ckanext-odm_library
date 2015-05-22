@@ -7,8 +7,6 @@ import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), "lib"))
 import odm_library_helper
-import datetime
-import time
 from urlparse import urlparse
 import json
 import collections

@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
 tag_dictionaries = [('taxonomy','subject-list')]
 
 library_fields = [
@@ -38,11 +39,6 @@ odc_fields = [
 
 metadata_fields = [
 ('odm_language','Language',True),
-('odm_date_created','Date Created',True),
 ('odm_date_uploaded','Date Uploaded',True),
-('odm_spatial_range','Spatial Range',True),
-('odm_process','Process(es)',True),
-('odm_source','Source(s)',True),
-('odm_contact','Contact',True),
-('odm_contact_email','Contact Email',True)
+('odm_spatial_range','Spatial Range',True)
 ]
