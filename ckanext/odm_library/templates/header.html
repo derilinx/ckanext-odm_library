@@ -1,10 +1,18 @@
 {% ckan_extends %}
 
 {% block header_site_navigation_tabs %}
+ {% if c.userobj %}
   {{ h.build_nav_main(
-    ('search', _('Datasets')),
-    ('organizations_index', _('Organizations')),
-    ('group_index', _('Groups')),
-    ('odm_library_index', _('Library'))
-  ) }}
+   ('search', _('Datasets')),
+   ('organizations_index', _('Organizations')),
+   ('group_index', _('Groups')),
+   ('odm_library_index', _('Library'))
+   ) }}
+ {% else %}
+  {{ h.build_nav_main(
+   ('search', _('Datasets')),
+   ('group_index', _('Groups')),
+   ('odm_library_index', _('Library'))
+   ) }}
+ {% endif %}
 {% endblock %}
