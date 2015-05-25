@@ -17,10 +17,8 @@ library_fields = [
 ('marc21_260c','Publication Date',False),
 ('marc21_300','Pagination',False),
 ('marc21_500','General Note',False),
-('marc21_520','Summary',False),
 ('marc21_650','Subject',False),
 ('marc21_651','Subject (Geographic Name)',False),
-('marc21_653','Keyword',False),
 ('marc21_700','Co-Author',False),
 ('marc21_710','Co-Author (Corporate)',False),
 ('marc21_850','Institution',False),
@@ -42,3 +40,5 @@ metadata_fields = [
 ('odm_date_uploaded','Date Uploaded',True),
 ('odm_spatial_range','Spatial Range',True)
 ]
+
+last_library_record = {}

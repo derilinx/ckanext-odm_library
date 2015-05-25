@@ -52,10 +52,6 @@
    {{ form.input('marc21_500', label=_('General Note'), id='field-marc21_500', placeholder=_('General Note.'), value=data.marc21_500, error=errors.marc21_500, classes=['control-full'], attrs={'data-module': 'autocomplete', 'data-module-tags': ''}) }}
  {% endblock %}
 
- {% block package_metadata_fields_marc21_520 %}
-   {{ form.markdown('marc21_520', label=_('Summary'), id='field-marc21_520', placeholder=_('Abstract or Summary of book or article.'), value=data.marc21_520, error=errors.marc21_520, classes=['control-full']) }}
- {% endblock %}
-
  {% block package_metadata_fields_marc21_650 %}
 
    {% if data.marc21_650 %}
@@ -85,9 +81,11 @@
    {{ form.input('marc21_651', label=_('Subject (Geographic Name)'), id='field-marc21_651', placeholder=_('Subject -Geographic Name.'), value=data.marc21_651, error=errors.marc21_651, classes=['control-full']) }}
  {% endblock %}
 
- {% block package_metadata_fields_marc21_653 %}
-   {{ form.input('marc21_653', label=_('Keyword'), id='field-marc21_653', placeholder=_('Index Term-Uncontrolled (keyword), Any words that the cataloguer chooses to identify the texts.'), value=data.marc21_653, error=errors.marc21_653, classes=['control-full'], attrs={'data-module': 'autocomplete', 'data-module-tags': ''}) }}
- {% endblock %}
+ {#
+  {% block package_metadata_fields_marc21_653 %}
+    {{ form.input('marc21_653', label=_('Keyword'), id='field-marc21_653', placeholder=_('Index Term-Uncontrolled (keyword), Any words that the cataloguer chooses to identify the texts.'), value=data.marc21_653, error=errors.marc21_653, classes=['control-full'], attrs={'data-module': 'autocomplete', 'data-module-tags': ''}) }}
+  {% endblock %}
+ #}
 
  {% block package_metadata_fields_marc21_700 %}
    {{ form.input('marc21_700', label=_('Co-Author'), id='field-marc21_700', placeholder=_('Personal Name (co-author), more than one author.'), value=data.marc21_700, error=errors.marc21_700, classes=['control-full'], attrs={'data-module': 'autocomplete', 'data-module-tags': ''}) }}

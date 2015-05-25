@@ -16,7 +16,7 @@ class LibraryController(PackageController):
 
     log.debug('LibraryController new')
 
-    return super(LibraryController, self).new(data=data, errors=errors,error_summary=error_summary)
+    return super(LibraryController, self).new(data=data, errors=errors,error_summary=error_summary)  
 
   def search(self):
 

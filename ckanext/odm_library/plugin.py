@@ -17,6 +17,10 @@ log = logging.getLogger(__name__)
 
 DATASET_TYPE_NAME = 'library_record'
 
+def last_library_record():
+  '''Returns the last created library_record'''
+  return odm_library_helper.last_library_record
+
 def odc_fields():
   '''Return a list of odc fields'''
 
@@ -55,6 +59,7 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
   plugins.implements(plugins.ITemplateHelpers)
   plugins.implements(plugins.IRoutes, inherit=True)
   plugins.implements(plugins.IFacets)
+  plugins.implements(plugins.IPackageController, inherit=True)
 
   def dataset_facets(self, facets_dict, package_type):
 
@@ -104,6 +109,9 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     m.connect('odm_library_new','/library/new',
       controller='ckanext.odm_library.controller:LibraryController',type='library_record',action='new')
 
+    m.connect('odm_library_new_resource','/library/new_resource/{id}',
+      controller='ckanext.odm_library.controller:LibraryController',type='library_record',action='new_resource')
+
     m.connect('odm_library_read', '/library/{id}',
       controller='ckanext.odm_library.controller:LibraryController',type='library_record', action='read')
 
@@ -123,6 +131,7 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     '''Register the plugin's functions above as a template helper function.'''
 
     return {
+      'odm_library_last_library_record': last_library_record,
       'odm_library_library_fields': library_fields,
       'odm_library_odc_fields': odc_fields,
       'odm_library_metadata_fields': metadata_fields
@@ -213,3 +222,16 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 
   def package_form(self):
     return 'library/new_package_form.html'
+
+  def resource_form(self):
+    return 'library/snippets/resource_form.html'
+
+  def after_create(self, context, pkg_dict):
+
+    log.debug('after_create: %s', pkg_dict)
+
+    odm_library_helper.last_library_record = pkg_dict
+
+  def after_update(self, context, pkg_dict):
+
+    log.debug('after_update: %s', pkg_dict)
