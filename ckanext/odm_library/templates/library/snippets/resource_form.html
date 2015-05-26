@@ -1,7 +1,5 @@
 {% extends "package/snippets/resource_form.html" %}
 
-{% set last_library_record = h.odm_library_last_library_record() %}
-
 {% block basic_fields_name %}
   {{ form.input('name', id='field-name', label=_('Name'), placeholder=_('eg. January 2011 Gold Prices'), value=data.name, error=errors.name, classes=['control-full']) }}
 {% endblock %}

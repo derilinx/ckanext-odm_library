@@ -16,6 +16,9 @@ class LibraryController(PackageController):
 
     log.debug('LibraryController new')
 
+    # data = {}
+    # data['type'] = DATASET_TYPE_NAME
+
     return super(LibraryController, self).new(data=data, errors=errors,error_summary=error_summary)
 
   def search(self):
@@ -46,6 +49,12 @@ class LibraryController(PackageController):
     log.debug('LibraryController delete')
 
     return super(LibraryController, self).delete(id)
+
+  def new_resource(self, id, data=None, errors=None, error_summary=None):
+
+    log.debug('LibraryController new_resource')
+
+    return super(LibraryController, self).new_resource(id, data=data, errors=errors, error_summary=error_summary)
 
   def _guess_package_type(self, expecting_name=False):
 
