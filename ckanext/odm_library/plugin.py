@@ -17,10 +17,6 @@ log = logging.getLogger(__name__)
 
 DATASET_TYPE_NAME = 'library_record'
 
-def last_library_record():
-  '''Returns the last created library_record'''
-  return odm_library_helper.last_library_record
-
 def odc_fields():
   '''Return a list of odc fields'''
 
@@ -131,7 +127,6 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     '''Register the plugin's functions above as a template helper function.'''
 
     return {
-      'odm_library_last_library_record': last_library_record,
       'odm_library_library_fields': library_fields,
       'odm_library_odc_fields': odc_fields,
       'odm_library_metadata_fields': metadata_fields
@@ -227,11 +222,10 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     return 'library/snippets/resource_form.html'
 
   def after_create(self, context, pkg_dict):
-
-    log.debug('after_create: %s', pkg_dict)
-
-    odm_library_helper.last_library_record = pkg_dict
+    log.debug('after_create: %s', pkg_dict['name'])
 
   def after_update(self, context, pkg_dict):
+    log.debug('after_update: %s', pkg_dict['name'])
 
-    log.debug('after_update: %s', pkg_dict)
+  def after_update(self, context, pkg_dict):
+    log.debug('after_update: %s', pkg_dict['name'])

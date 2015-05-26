@@ -3,9 +3,9 @@
 {% set last_library_record = h.odm_library_last_library_record() %}
 
 {% block basic_fields_name %}
-  {{ form.input('name', id='field-name', label=_('Name'), placeholder=_('eg. January 2011 Gold Prices'), value=last_library_record['title'], error=errors.name, classes=['control-full']) }}
+  {{ form.input('name', id='field-name', label=_('Name'), placeholder=_('eg. January 2011 Gold Prices'), value=data.name, error=errors.name, classes=['control-full']) }}
 {% endblock %}
 
 {% block basic_fields_description %}
-  {{ form.markdown('description', id='field-description', label=_('Description'), placeholder=_('Some useful notes about the data'), value=last_library_record['notes'], error=errors.description) }}
+  {{ form.markdown('description', id='field-description', label=_('Description'), placeholder=_('Some useful notes about the data'), value=data.description, error=errors.description) }}
 {% endblock %}
