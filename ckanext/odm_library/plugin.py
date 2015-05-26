@@ -237,6 +237,3 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 
   def after_update(self, context, pkg_dict):
     log.debug('after_update: %s', pkg_dict['name'])
-
-  def after_update(self, context, pkg_dict):
-    log.debug('after_update: %s', pkg_dict['name'])
