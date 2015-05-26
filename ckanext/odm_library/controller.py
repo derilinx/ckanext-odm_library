@@ -16,7 +16,7 @@ class LibraryController(PackageController):
 
     log.debug('LibraryController new')
 
-    return super(LibraryController, self).new(data=data, errors=errors,error_summary=error_summary)  
+    return super(LibraryController, self).new(data=data, errors=errors,error_summary=error_summary)
 
   def search(self):
 
@@ -40,6 +40,12 @@ class LibraryController(PackageController):
     log.debug('LibraryController edit')
 
     return super(LibraryController, self).edit(id, data=data, errors=errors,error_summary=error_summary)
+
+  def delete(self, id):
+
+    log.debug('LibraryController delete')
+
+    return super(LibraryController, self).delete(id)
 
   def _guess_package_type(self, expecting_name=False):
 

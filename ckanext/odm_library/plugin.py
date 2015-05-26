@@ -17,6 +17,13 @@ log = logging.getLogger(__name__)
 
 DATASET_TYPE_NAME = 'library_record'
 
+def get_dataset_type():
+  '''Return the dataset type'''
+
+  log.debug('get_dataset_type')
+
+  return DATASET_TYPE_NAME
+
 def odc_fields():
   '''Return a list of odc fields'''
 
@@ -114,6 +121,9 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     m.connect('odm_library_edit', '/library/edit/{id}',
       controller='ckanext.odm_library.controller:LibraryController',type='library_record', action='edit')
 
+    m.connect('odm_library_delete', '/library/delete/{id}',
+      controller='ckanext.odm_library.controller:LibraryController',type='library_record', action='delete')
+
     return m
 
   def update_config(self, config):
@@ -127,6 +137,7 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     '''Register the plugin's functions above as a template helper function.'''
 
     return {
+      'odm_library_get_dataset_type': get_dataset_type,
       'odm_library_library_fields': library_fields,
       'odm_library_odc_fields': odc_fields,
       'odm_library_metadata_fields': metadata_fields
