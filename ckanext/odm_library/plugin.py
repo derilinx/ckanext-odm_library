@@ -3,6 +3,7 @@ import pylons
 import logging
 import ckan.plugins as plugins
 import ckan.plugins.toolkit as toolkit
+from beaker.middleware import SessionMiddleware
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), "lib"))
@@ -16,6 +17,10 @@ import ckan.lib.helpers as h
 log = logging.getLogger(__name__)
 
 DATASET_TYPE_NAME = 'library_record'
+
+def last_dataset():
+  ''' Returns the last dataset info stored in session'''
+  return odm_library_helper.session['last_dataset']
 
 def get_dataset_type():
   '''Return the dataset type'''
@@ -63,6 +68,12 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
   plugins.implements(plugins.IRoutes, inherit=True)
   plugins.implements(plugins.IFacets)
   plugins.implements(plugins.IPackageController, inherit=True)
+
+  def __init__(self, *args, **kwargs):
+
+    log.debug('OdmLibraryPlugin init')
+    wsgi_app = SessionMiddleware(None, None)
+    odm_library_helper.session = wsgi_app.session
 
   def dataset_facets(self, facets_dict, package_type):
 
@@ -137,6 +148,7 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     '''Register the plugin's functions above as a template helper function.'''
 
     return {
+      'odm_library_last_dataset': last_dataset,
       'odm_library_get_dataset_type': get_dataset_type,
       'odm_library_library_fields': library_fields,
       'odm_library_odc_fields': odc_fields,
@@ -232,8 +244,20 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
   def resource_form(self):
     return 'library/snippets/resource_form.html'
 
+  def before_create(self, context, resource):
+    log.info('before_create')
+
+    odm_library_helper.session['last_dataset'] = None
+    odm_library_helper.session.save()
+
   def after_create(self, context, pkg_dict):
     log.debug('after_create: %s', pkg_dict['name'])
 
+    odm_library_helper.session['last_dataset'] = pkg_dict
+    odm_library_helper.session.save()
+
   def after_update(self, context, pkg_dict):
     log.debug('after_update: %s', pkg_dict['name'])
+
+    odm_library_helper.session['last_dataset'] = pkg_dict
+    odm_library_helper.session.save()

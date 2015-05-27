@@ -40,3 +40,5 @@ metadata_fields = [
   ('odm_date_uploaded','Date Uploaded',True),
   ('odm_spatial_range','Spatial Range',True)
 ]
+
+session = {}
