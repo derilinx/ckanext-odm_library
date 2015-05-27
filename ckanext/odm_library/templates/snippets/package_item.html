@@ -34,8 +34,10 @@ Example:
             {% endblock %}
             {% block heading_title %}
              {% if package.type == h.odm_library_get_dataset_type() %}
+              <i class="fa fa-book icon icon-book glyphicon glyphicon-book"></i>
               {{ h.link_to(h.truncate(title, truncate_title), h.url_for(controller='ckanext.odm_library.controller:LibraryController', type='library_record', action='read', id=package.name)) }}
              {% else %}
+              <i class="fa fa-sitemap icon icon-sitemap glyphicon glyphicon-sitemap"></i>
               {{ h.link_to(h.truncate(title, truncate_title), h.url_for(controller='package', action='read', id=package.name)) }}
              {% endif %}
             {% endblock %}
