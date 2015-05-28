@@ -36,6 +36,7 @@ odc_fields = [
 ]
 
 metadata_fields = [
+  ('odm_contact','Contact',True),
   ('odm_language','Language',True),
   ('odm_date_uploaded','Date Uploaded',True),
   ('odm_spatial_range','Spatial Range',True)
