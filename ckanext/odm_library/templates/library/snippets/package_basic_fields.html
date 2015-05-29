@@ -12,3 +12,7 @@
 {% block package_basic_fields_description %}
   {{ form.markdown('notes', id='field-notes', label=_('Summary'), placeholder=_('Abstract or Summary of book or article'), value=data.notes, error=errors.notes) }}
 {% endblock %}
+
+{% block package_metadata_fields_version %}
+  {{ form.input('version', is_required=true, label=_('Version / Edition'), id='field-version', placeholder=_('1.0'), value=data.version, error=errors.version, classes=['control-full']) }}
+{% endblock %}

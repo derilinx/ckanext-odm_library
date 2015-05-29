@@ -148,11 +148,11 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     '''Register the plugin's functions above as a template helper function.'''
 
     return {
+      'odm_library_odc_fields': odc_fields,
+      'odm_library_metadata_fields': metadata_fields,
       'odm_library_last_dataset': last_dataset,
       'odm_library_get_dataset_type': get_dataset_type,
-      'odm_library_library_fields': library_fields,
-      'odm_library_odc_fields': odc_fields,
-      'odm_library_metadata_fields': metadata_fields
+      'odm_library_library_fields': library_fields
     }
 
   def _modify_package_schema_write(self, schema):
@@ -174,6 +174,12 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
       if library_field[2]:
         validators_and_converters.insert(1,validate_not_empty)
       schema.update({library_field[0]: validators_and_converters})
+
+    for ckan_field in odm_library_helper.ckan_fields:
+      validators_and_converters = [toolkit.get_validator('ignore_missing'),toolkit.get_converter('convert_to_extras'), ]
+      if ckan_field[2]:
+        validators_and_converters.insert(1,validate_not_empty)
+      schema.update({ckan_field[0]: validators_and_converters})
 
     for tag_dictionary in odm_library_helper.tag_dictionaries:
       schema.update({tag_dictionary[0]: [toolkit.get_validator('ignore_missing'),toolkit.get_converter('convert_to_tags')(tag_dictionary[0])]})
@@ -199,6 +205,12 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
       if library_field[2]:
         validators_and_converters.append(validate_not_empty)
       schema.update({library_field[0]: validators_and_converters})
+
+    for ckan_field in odm_library_helper.ckan_fields:
+      validators_and_converters = [toolkit.get_converter('convert_from_extras'),toolkit.get_validator('ignore_missing')]
+      if ckan_field[2]:
+        validators_and_converters.append(validate_not_empty)
+      schema.update({ckan_field[0]: validators_and_converters})
 
     for tag_dictionary in odm_library_helper.tag_dictionaries:
       schema.update({tag_dictionary[0]: [toolkit.get_converter('convert_from_tags')(tag_dictionary[0]),toolkit.get_validator('ignore_missing')]})

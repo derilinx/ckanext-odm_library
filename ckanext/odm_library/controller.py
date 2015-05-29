@@ -16,9 +16,6 @@ class LibraryController(PackageController):
 
     log.debug('LibraryController new')
 
-    # data = {}
-    # data['type'] = DATASET_TYPE_NAME
-
     return super(LibraryController, self).new(data=data, errors=errors,error_summary=error_summary)
 
   def search(self):

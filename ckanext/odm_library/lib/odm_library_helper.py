@@ -6,7 +6,6 @@ tag_dictionaries = [('taxonomy','subject-list')]
 library_fields = [
   ('marc21_020','ISBN',False),
   ('marc21_022','ISSN',False),
-  ('marc21_084','Classification',False),
   ('marc21_100','Author',False),
   ('marc21_110','Corporate Author',False),
   ('marc21_245','Title',False),
@@ -17,12 +16,8 @@ library_fields = [
   ('marc21_260c','Publication Date',False),
   ('marc21_300','Pagination',False),
   ('marc21_500','General Note',False),
-  ('marc21_650','Subject',False),
-  ('marc21_651','Subject (Geographic Name)',False),
   ('marc21_700','Co-Author',False),
-  ('marc21_710','Co-Author (Corporate)',False),
-  ('marc21_850','Institution',False),
-  ('marc21_852','Location',False)
+  ('marc21_710','Co-Author (Corporate)',False)
 ]
 
 odc_fields = [
@@ -36,10 +31,14 @@ odc_fields = [
 ]
 
 metadata_fields = [
-  ('odm_contact','Contact',True),
+  ('odm_contact','Contact',False),
   ('odm_language','Language',True),
   ('odm_date_uploaded','Date Uploaded',True),
-  ('odm_spatial_range','Spatial Range',True)
+  ('odm_spatial_range','Geographic area (Spatial Range)',True)
+]
+
+ckan_fields= [
+  ('version','Version',True)
 ]
 
 session = {}

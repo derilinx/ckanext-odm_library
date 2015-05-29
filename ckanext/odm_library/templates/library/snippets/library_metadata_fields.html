@@ -2,18 +2,28 @@
 
 <div class="control-group">
 
- <h3>{{ _('Open Development Network Library publication') }}</h3>
-
  {% block package_metadata_fields_marc21_020 %}
-   {{ form.input('marc21_020', label=_('ISBN'), id='field-package_metadata_fields_marc21_020', placeholder=_('The International Standard Book Number (ISBN) is a unique numeric commercial book identifier based upon the 10 or 13-digit Standard Book Numbering (SBN).'), value=data.marc21_020, error=errors.marc21_020, classes=['control-full']) }}
+  <div class="control-group">
+    <label for="field-marc21_020" class="control-label">{{ _('ISBN') }}</label>
+    <div id="field-marc21_020-container" class="controls">
+      <input id="field-marc21_020" name="marc21_020" type='number'></input>
+      <span id="field-marc21_020-disclaimer" class="info-block info-inline">
+        <i class="icon-info-sign"></i>
+        {% trans %}
+        A 13-digit number that uniquely identifies  most books and book-like products please enter if ISBN appears on publication.
+        {% endtrans %}
+      </span>
+    </div>
+  </div>
  {% endblock %}
 
  {% block package_metadata_fields_marc21_022 %}
-   {{ form.input('marc21_022', label=_('ISSN'), id='field-package_metadata_fields_marc21_022', placeholder=_('International Standard Serial Number (ISSN) a unique numeric commercial serial identifier based upon the 8-digitSeriel standard number.'), value=data.marc21_022, error=errors.marc21_022, classes=['control-full']) }}
- {% endblock %}
-
- {% block package_metadata_fields_marc21_084 %}
-   {{ form.input('marc21_084', label=_('Classification'), id='field-marc21_084', placeholder=_('Classification Number assigned by ODC Cambodia to identify its shelf location.'), value=data.marc21_084, error=errors.marc21_084, classes=['control-full']) }}
+ <div class="control-group control-full">
+   <label for="field-marc21_022" class="control-label">{{ _('ISSN') }}</label>
+   <div id="field-marc21_022-container" class="controls">
+     <input id="field-marc21_022" name="marc21_022" type='number'></input>
+   </div>
+ </div>
  {% endblock %}
 
  {% block package_metadata_fields_marc21_100 %}
@@ -22,6 +32,14 @@
 
  {% block package_metadata_fields_marc21_110 %}
    {{ form.input('marc21_110', label=_('Corporate Author'), id='field-marc21_110', placeholder=_('Main Entry-Corporate Name (corporate author).'), value=data.marc21_110, error=errors.marc21_110, classes=['control-full']) }}
+ {% endblock %}
+
+ {% block package_metadata_fields_marc21_700 %}
+   {{ form.input('marc21_700', label=_('Co-Author'), id='field-marc21_700', placeholder=_('Personal Name (co-author), more than one author.'), value=data.marc21_700, error=errors.marc21_700, classes=['control-full'], attrs={'data-module': 'autocomplete', 'data-module-tags': ''}) }}
+ {% endblock %}
+
+ {% block package_metadata_fields_marc21_710 %}
+   {{ form.input('marc21_710', label=_('Co-Author (Corporate)'), id='field-marc21_710', placeholder=_('Corporate Name, more than one Corporate.'), value=data.marc21_710, error=errors.marc21_710, classes=['control-full'], attrs={'data-module': 'autocomplete', 'data-module-tags': ''}) }}
  {% endblock %}
 
  {% block package_metadata_fields_marc21_246 %}
@@ -37,7 +55,7 @@
  {% endblock %}
 
  {% block package_metadata_fields_marc21_260b %}
-   {{ form.input('marc21_260b', label=_('Publication Name'), id='field-marc21_260b', placeholder=_('Publisher'), value=data.marc21_260b, error=errors.marc21_260b, classes=['control-full']) }}
+   {{ form.input('marc21_260b', label=_('Publisher'), id='field-marc21_260b', placeholder=_('Name of publishing organization'), value=data.marc21_260b, error=errors.marc21_260b, classes=['control-full']) }}
  {% endblock %}
 
  {% block package_metadata_fields_marc21_260c %}
@@ -50,57 +68,6 @@
 
  {% block package_metadata_fields_marc21_500 %}
    {{ form.input('marc21_500', label=_('General Note'), id='field-marc21_500', placeholder=_('General Note.'), value=data.marc21_500, error=errors.marc21_500, classes=['control-full'], attrs={'data-module': 'autocomplete', 'data-module-tags': ''}) }}
- {% endblock %}
-
- {% block package_metadata_fields_marc21_650 %}
-
-   {% if data.marc21_650 %}
-     {% set initial_values = data.marc21_650.split(',') %}
-   {% else %}
-     {% set initial_values = [] %}
-   {% endif%}
-
-   {{ form.input('marc21_650', label=_('Subject'), id='field-marc21_650', placeholder=_('Subject Heading-Topical Term based on Library of Congress Subject Heading.'), value=data.marc21_650, error=errors.marc21_650, classes=['control-full'], attrs={'data-module': 'free-multiselect-module', 'data-module-suggestions': h.odm_theme_jsonify_list(h.odm_theme_tag_dictionaries('subject-list')), 'data-module-init_value': h.odm_theme_jsonify_list(initial_values)}) }}
- {% endblock %}
-
- {#
-   {% block package_metadata_fields_marc21_650 %}
-     {% set subject_list_tags = h.odm_theme_tag_dictionaries('subject-list') %}
-     {% if subject_list_tags|length > 0 %}
-     <div class="control-group">
-       <label class="control-label" for="field-marc21_650">{{ _("Subject") }}</label>
-       <div class="controls control-full">
-         <input id="field-marc21_650" name="marc21_650" value={{data.marc21_650}} class="free-multiselect" data-module="free-multiselect-module" data-module-suggestions="{{h.odm_theme_tag_dictionaries_json('subject-list')}}" placeholder="{{ _("Subject Heading-Topical Term based on Library of Congress Subject Heading.") }}">
-       </div>
-     </div>
-     {% endif %}
-   {% endblock%}
- #}
-
- {% block package_metadata_fields_marc21_651 %}
-   {{ form.input('marc21_651', label=_('Subject (Geographic Name)'), id='field-marc21_651', placeholder=_('Subject -Geographic Name.'), value=data.marc21_651, error=errors.marc21_651, classes=['control-full']) }}
- {% endblock %}
-
- {#
-  {% block package_metadata_fields_marc21_653 %}
-    {{ form.input('marc21_653', label=_('Keyword'), id='field-marc21_653', placeholder=_('Index Term-Uncontrolled (keyword), Any words that the cataloguer chooses to identify the texts.'), value=data.marc21_653, error=errors.marc21_653, classes=['control-full'], attrs={'data-module': 'autocomplete', 'data-module-tags': ''}) }}
-  {% endblock %}
- #}
-
- {% block package_metadata_fields_marc21_700 %}
-   {{ form.input('marc21_700', label=_('Co-Author'), id='field-marc21_700', placeholder=_('Personal Name (co-author), more than one author.'), value=data.marc21_700, error=errors.marc21_700, classes=['control-full'], attrs={'data-module': 'autocomplete', 'data-module-tags': ''}) }}
- {% endblock %}
-
- {% block package_metadata_fields_marc21_710 %}
-   {{ form.input('marc21_710', label=_('Co-Author (Corporate)'), id='field-marc21_710', placeholder=_('Corporate Name, more than one Corporate.'), value=data.marc21_710, error=errors.marc21_710, classes=['control-full'], attrs={'data-module': 'autocomplete', 'data-module-tags': ''}) }}
- {% endblock %}
-
- {% block package_metadata_fields_marc21_850 %}
-   {{ form.input('marc21_850', label=_('Institution'), id='field-marc21_850', placeholder=_('Holding Institution.'), value=data.marc21_850, error=errors.marc21_850, classes=['control-full']) }}
- {% endblock %}
-
- {% block package_metadata_fields_marc21_852 %}
-   {{ form.input('marc21_852', label=_('Location'), id='field-marc21_852', placeholder=_('Location of asset.'), value=data.marc21_852, error=errors.marc21_852, classes=['control-full'], attrs={'data-module': 'autocomplete', 'data-module-tags': ''}) }}
  {% endblock %}
 
  </div>
