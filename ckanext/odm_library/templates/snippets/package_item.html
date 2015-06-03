@@ -18,6 +18,15 @@ Example:
 {% set title = package.title or package.name %}
 {% set notes = h.markdown_extract(package.notes, extract_length=truncate) %}
 
+{% set image_resources = [] %}
+{% if package.resources and not hide_resources %}
+ {% for resource in package.resources %}
+  {% if (resource.format.lower() == 'jpg') or (resource.format.lower() == 'png') %}
+   {% do image_resources.append(resource) %}
+  {% endif %}
+ {% endfor %}
+{% endif %}
+
 {% block package_item %}
   <li class="{{ item_class or "dataset-item" }}">
     {% block content %}
@@ -57,8 +66,14 @@ Example:
           {% endif %}
         {% endblock %}
         {% block notes %}
-          {% if notes %}
-            <div>{{ notes|urlize }}</div>
+          {% set resource = image_resources|last %}
+  	      {% if resource %}
+  	       <img class="dataset_thumb_s" src="{{ h.odm_theme_localize_resource_url(resource.url) }}"></img>
+  	      {% endif %}
+  	      {% if notes %}
+  	        <div>
+  	         {{ notes|urlize }}
+  	        </div>
           {% else %}
             <p class="empty">{{ _("This dataset has no description") }}</p>
           {% endif %}
@@ -76,7 +91,6 @@ Example:
                  {% else %}
                   <a href="{{ h.url_for(controller='package', action='read', id=package.name) }}" class="label" data-format="{{ resource.lower() }}">{{ resource }}</a>
                  {% endif %}
-
                 </li>
                 {% endfor %}
               {% endblock %}
