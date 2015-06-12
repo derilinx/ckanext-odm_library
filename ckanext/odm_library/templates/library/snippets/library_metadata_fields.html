@@ -31,7 +31,7 @@
  {% endblock %}
 
  {% block package_metadata_fields_marc21_110 %}
-   {{ form.input('marc21_110', label=_('Corporate Author'), id='field-marc21_110', placeholder=_('Main Entry-Corporate Name (corporate author).'), value=data.marc21_110, error=errors.marc21_110, classes=['control-full']) }}
+   {{ form.input('marc21_110', label=_('Corporate Author'), id='field-marc21_110', placeholder=_('Main Entry-Corporate Name (corporate author) or title of journal'), value=data.marc21_110, error=errors.marc21_110, classes=['control-full']) }}
  {% endblock %}
 
  {% block package_metadata_fields_marc21_700 %}
