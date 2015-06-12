@@ -31,6 +31,8 @@ odc_fields = [
 ]
 
 metadata_fields = [
+  ('odm_copyright','Copyright',False),
+  ('odm_access_and_use_constraints','Access and Use Constraints',False),
   ('odm_contact','Contact',False),
   ('odm_language','Language',True),
   ('odm_date_uploaded','Date Uploaded',True),
