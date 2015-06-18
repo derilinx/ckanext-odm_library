@@ -65,7 +65,7 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
   plugins.implements(plugins.IDatasetForm)
   plugins.implements(plugins.IConfigurer)
   plugins.implements(plugins.ITemplateHelpers)
-  plugins.implements(plugins.IRoutes, inherit=True)
+  plugins.implements(plugins.IRoutes)
   plugins.implements(plugins.IFacets)
   plugins.implements(plugins.IPackageController, inherit=True)
 
@@ -127,13 +127,17 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
       controller='ckanext.odm_library.controller:LibraryController',type='library_record',action='new_resource')
 
     m.connect('odm_library_read', '/library/{id}',
-      controller='ckanext.odm_library.controller:LibraryController',type='library_record', action='read')
+      controller='ckanext.odm_library.controller:LibraryController',type='library_record', action='read', ckan_icon='book')
 
     m.connect('odm_library_edit', '/library/edit/{id}',
       controller='ckanext.odm_library.controller:LibraryController',type='library_record', action='edit')
 
     m.connect('odm_library_delete', '/library/delete/{id}',
       controller='ckanext.odm_library.controller:LibraryController',type='library_record', action='delete')
+
+    return m
+
+  def after_map(self, m):
 
     return m
 
