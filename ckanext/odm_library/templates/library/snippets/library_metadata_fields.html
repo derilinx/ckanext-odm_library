@@ -35,11 +35,11 @@
  {% endblock %}
 
  {% block package_metadata_fields_marc21_700 %}
-   {{ form.input('marc21_700', label=_('Co-Author'), id='field-marc21_700', placeholder=_('Personal Name (co-author), more than one author.'), value=data.marc21_700, error=errors.marc21_700, classes=['control-full'], attrs={'data-module': 'autocomplete', 'data-module-tags': ''}) }}
+   {{ form.input('marc21_700', label=_('Co-Author'), id='field-marc21_700', placeholder=_('Personal Name (co-author), more than one author.'), value=data.marc21_700, error=errors.marc21_700, classes=['control-full']) }}
  {% endblock %}
 
  {% block package_metadata_fields_marc21_710 %}
-   {{ form.input('marc21_710', label=_('Co-Author (Corporate)'), id='field-marc21_710', placeholder=_('Corporate Name, more than one Corporate.'), value=data.marc21_710, error=errors.marc21_710, classes=['control-full'], attrs={'data-module': 'autocomplete', 'data-module-tags': ''}) }}
+   {{ form.input('marc21_710', label=_('Co-Author (Corporate)'), id='field-marc21_710', placeholder=_('Corporate Name, more than one Corporate.'), value=data.marc21_710, error=errors.marc21_710, classes=['control-full']) }}
  {% endblock %}
 
  {% block package_metadata_fields_marc21_246 %}
