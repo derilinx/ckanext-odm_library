@@ -46,7 +46,7 @@ Example:
               <i class="fa fa-book icon icon-book glyphicon glyphicon-book"></i>
               {{ h.link_to(h.truncate(title, truncate_title), h.url_for(controller='ckanext.odm_library.controller:LibraryController', type='library_record', action='read', id=package.name)) }}
              {% else %}
-              <i class="fa fa-table icon icon-table glyphicon glyphicon-table"></i>
+              <i class="fa fa-sitemap icon icon-sitemap glyphicon glyphicon-sitemap"></i>
               {{ h.link_to(h.truncate(title, truncate_title), h.url_for(controller='package', action='read', id=package.name)) }}
              {% endif %}
             {% endblock %}
@@ -67,13 +67,13 @@ Example:
         {% endblock %}
         {% block notes %}
           {% set resource = image_resources|last %}
-  	      {% if resource %}
-  	       <img class="dataset_thumb_s" src="{{ h.odm_theme_localize_resource_url(resource.url) }}"></img>
-  	      {% endif %}
-  	      {% if notes %}
-  	        <div>
-  	         {{ notes|urlize }}
-  	        </div>
+         {% if resource %}
+          <img class="dataset_thumb_s" src="{{ h.odm_theme_localize_resource_url(resource.url) }}"></img>
+         {% endif %}
+         {% if notes %}
+           <div>
+            {{ notes|urlize }}
+           </div>
           {% else %}
             <p class="empty">{{ _("This dataset has no description") }}</p>
           {% endif %}
