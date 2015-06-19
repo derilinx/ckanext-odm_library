@@ -2,6 +2,21 @@
 
 <div class="control-group">
 
+ {% block package_basic_fields_document_type %}
+  <div class="control-group control-full">
+    {% set error = errors.document_type %}
+    <label class="control-label" for="field-document_type">{{ _("Document type") }}</label>
+    <div class="controls">
+      <select id="field-document_type" name="document_type" data-module="autocomplete">
+        {% for document_type in h.odm_library_document_types()  %}
+          <option value="{{ document_type[0] }}" {% if data.get('document_type', 'notspecified') == document_type[0] %}selected="selected"{% endif %}>{{ document_type[1] }}</option>
+        {% endfor %}
+      </select>
+      {% if error %}<span class="error-block">{{ error }}</span>{% endif %}
+    </div>
+  </div>
+ {% endblock %}
+
  {% block package_metadata_fields_marc21_020 %}
   <div class="control-group">
     <label for="field-marc21_020" class="control-label">{{ _('ISBN') }}</label>

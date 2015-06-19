@@ -18,6 +18,13 @@ log = logging.getLogger(__name__)
 
 DATASET_TYPE_NAME = 'library_record'
 
+def get_document_types():
+  '''Return a list of document types'''
+
+  log.debug('get_document_types')
+
+  return odm_library_helper.document_types
+
 def last_dataset():
   ''' Returns the last dataset info stored in session'''
   return odm_library_helper.session['last_dataset']
@@ -152,6 +159,7 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     '''Register the plugin's functions above as a template helper function.'''
 
     return {
+      'odm_library_document_types': get_document_types,
       'odm_library_odc_fields': odc_fields,
       'odm_library_metadata_fields': metadata_fields,
       'odm_library_last_dataset': last_dataset,
