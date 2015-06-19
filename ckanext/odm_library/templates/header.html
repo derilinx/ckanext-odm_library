@@ -3,9 +3,9 @@
 {% block header_site_navigation_tabs %}
  {% if c.userobj %}
   {{ h.build_nav_main(
-   ('search', _('Datasets')),
+   ('search', _('All records')),
    ('organizations_index', _('Organizations')),
-   ('group_index', _('Groups')),
+   ('group_index', _('Record types')),
    ('odm_library_index', _('Library'))
    ) }}
  {% else %}
