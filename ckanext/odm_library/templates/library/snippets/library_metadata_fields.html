@@ -61,10 +61,6 @@
    {{ form.input('marc21_246', label=_('Varying Form of Title'), id='field-marc21_246', placeholder=_('Parallel title or translation.'), value=data.marc21_246, error=errors.marc21_246, classes=['control-full']) }}
  {% endblock %}
 
- {% block package_metadata_fields_marc21_250 %}
-   {{ form.input('marc21_250', label=_('Edition'), id='field-marc21_250', placeholder=_('Version of publication'), value=data.marc21_250, error=errors.marc21_250, classes=['control-full']) }}
- {% endblock %}
-
  {% block package_metadata_fields_marc21_260a %}
    {{ form.input('marc21_260a', label=_('Publication Place'), id='field-marc21_260a', placeholder=_('Place of publisher'), value=data.marc21_260a, error=errors.marc21_260a, classes=['control-full']) }}
  {% endblock %}

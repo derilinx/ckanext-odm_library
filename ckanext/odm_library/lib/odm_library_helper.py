@@ -6,13 +6,13 @@ tag_dictionaries = [('taxonomy','subject-list')]
 document_types = [
   ('advocacy_and_promotional_materials','Advocacy and promotional materials'),
   ('analysis_discussion_papers_and_blogs','Analysis, discussion papers, and blogs'),
-  ('books','Books'),
+  ('books_and_book_chapters','Books and book chapters'),
   ('issue_and_policy_briefs','Issue and policy briefs'),
   ('profiles_people','Profiles - People'),
   ('profiles_organizations_and_projects','Profiles - Organizations  and projects'),
   ('profiles_geographical_areas_and_sites','Profiles - Geographical areas and sites'),
   ('conference_workshops_proceedings_and_presentations','Conference/workshop proceedings and presentations'),
-  ('reports_and_research_papers','Reports and research papers (including theses and dissertations)')
+  ('reports_journal_articles_and_research_papers','Reports, journal articles, and research papers (including theses and dissertations)')
 ]
 
 library_fields = [
