@@ -7,6 +7,7 @@ document_types = [
   ('advocacy_and_promotional_materials','Advocacy and promotional materials'),
   ('analysis_discussion_papers_and_blogs','Analysis, discussion papers, and blogs'),
   ('books_and_book_chapters','Books and book chapters'),
+  ('case_studies','Case studies'),
   ('issue_and_policy_briefs','Issue and policy briefs'),
   ('profiles_people','Profiles - People'),
   ('profiles_organizations_and_projects','Profiles - Organizations  and projects'),
