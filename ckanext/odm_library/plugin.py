@@ -78,7 +78,6 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
   plugins.implements(plugins.IRoutes, inherit=True)
   plugins.implements(plugins.IFacets)
   plugins.implements(plugins.IPackageController, inherit=True)
-  plugins.implements(plugins.IResourceController, inherit=True)
 
   def __init__(self, *args, **kwargs):
 
@@ -285,8 +284,3 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 
     odm_library_helper.session['last_dataset'] = pkg_dict
     odm_library_helper.session.save()
-
-  # IResourceController
-
-  def before_show(self, resource_dict):
-    log.debug('before_show: %s', resource_dict)
