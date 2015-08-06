@@ -1,8 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-tag_dictionaries = [('taxonomy','subject-list')]
-
 document_types = [
   ('advocacy_and_promotional_materials','Advocacy and promotional materials'),
   ('analysis_discussion_papers_and_blogs','Analysis, discussion papers, and blogs'),
@@ -56,5 +54,7 @@ metadata_fields = [
 ckan_fields= [
   ('version','Version',True)
 ]
+
+taxonomy_dictionary = 'taxonomy'
 
 session = {}

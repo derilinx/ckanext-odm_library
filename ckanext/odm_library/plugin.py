@@ -89,9 +89,9 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 
     facets_dict = {
               'license_id': toolkit._('License'),
+              'vocab_taxonomy': toolkit._('Topics'),
               'organization': toolkit._('Organizations'),
               'groups': toolkit._('Groups'),
-              'tags': toolkit._('Tags'),
               'res_format': toolkit._('Formats'),
               'odm_language': toolkit._('Language'),
               'odm_spatial_range': toolkit._('Country')
@@ -103,8 +103,8 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 
     group_facets = {
               'license_id': toolkit._('License'),
+              'vocab_taxonomy': toolkit._('Topics'),
               'organization': toolkit._('Organizations'),
-              'tags': toolkit._('Tags'),
               'res_format': toolkit._('Formats'),
               'odm_language': toolkit._('Language'),
               'odm_spatial_range': toolkit._('Country')
@@ -116,8 +116,8 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 
     organization_facets = {
               'license_id': toolkit._('License'),
+              'vocab_taxonomy': toolkit._('Topics'),
               'groups': toolkit._('Groups'),
-              'tags': toolkit._('Tags'),
               'res_format': toolkit._('Formats'),
               'odm_language': toolkit._('Language'),
               'odm_spatial_range': toolkit._('Country')
@@ -192,8 +192,7 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
         validators_and_converters.insert(1,validate_not_empty)
       schema.update({ckan_field[0]: validators_and_converters})
 
-    for tag_dictionary in odm_library_helper.tag_dictionaries:
-      schema.update({tag_dictionary[0]: [toolkit.get_validator('ignore_missing'),toolkit.get_converter('convert_to_tags')(tag_dictionary[0])]})
+    schema.update({odm_library_helper.taxonomy_dictionary: [toolkit.get_validator('ignore_missing'),toolkit.get_converter('convert_to_tags')(odm_library_helper.taxonomy_dictionary)]})
 
     return schema
 
@@ -223,8 +222,7 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
         validators_and_converters.append(validate_not_empty)
       schema.update({ckan_field[0]: validators_and_converters})
 
-    for tag_dictionary in odm_library_helper.tag_dictionaries:
-      schema.update({tag_dictionary[0]: [toolkit.get_converter('convert_from_tags')(tag_dictionary[0]),toolkit.get_validator('ignore_missing')]})
+    schema.update({odm_library_helper.taxonomy_dictionary: [toolkit.get_converter('convert_from_tags')(odm_library_helper.taxonomy_dictionary),toolkit.get_validator('ignore_missing')]})
 
     return schema
 
