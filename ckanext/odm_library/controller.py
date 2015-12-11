@@ -1,12 +1,15 @@
 import ckan.plugins as p
 import logging
+import sys
+import os
 import ckan.lib.helpers as h
 import plugin as odm_library
 from ckan.lib.base import BaseController, render
 import ckan.model as model
 from ckan.common import c, request
 from ckan.controllers.package import PackageController
-from ckanext.odm_library.plugin import DATASET_TYPE_NAME
+sys.path.append(os.path.join(os.path.dirname(__file__), "lib"))
+import odm_library_helper
 
 log = logging.getLogger(__name__)
 
@@ -57,4 +60,4 @@ class LibraryController(PackageController):
 
     log.debug('LibraryController _guess_package_type')
 
-    return DATASET_TYPE_NAME
+    return odm_library_helper.get_dataset_type()
