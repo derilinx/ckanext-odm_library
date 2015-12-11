@@ -16,63 +16,9 @@ import ckan.lib.helpers as h
 
 log = logging.getLogger(__name__)
 
-DATASET_TYPE_NAME = 'library_record'
-
-def get_document_types():
-  '''Return a list of document types'''
-
-  log.debug('get_document_types')
-
-  return odm_library_helper.document_types
-
-def last_dataset():
-  ''' Returns the last dataset info stored in session'''
-  if 'last_dataset' in odm_library_helper.session:
-    return odm_library_helper.session['last_dataset']
-
-  return None
-
-def get_dataset_type():
-  '''Return the dataset type'''
-
-  log.debug('get_dataset_type')
-
-  return DATASET_TYPE_NAME
-
-def odc_fields():
-  '''Return a list of odc fields'''
-
-  log.debug('odc_fields')
-
-  return odm_library_helper.odc_fields
-
-def metadata_fields():
-  '''Return a list of metadata fields'''
-
-  log.debug('metadata_fields')
-
-  return odm_library_helper.metadata_fields
-
-def library_fields():
-  '''Return a list of library fields'''
-
-  log.debug('library_fields')
-
-  return odm_library_helper.library_fields
-
-def validate_not_empty(value,context):
-  '''Returns if a string is empty or not'''
-
-  log.debug('validate_not_empty: %s', value)
-
-  if not value or len(value) is None:
-    raise toolkit.Invalid('Missing value')
-  return value
-
 class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
   '''OD Mekong library plugin.'''
 
-  plugins.implements(plugins.IDatasetForm)
   plugins.implements(plugins.IConfigurer)
   plugins.implements(plugins.ITemplateHelpers)
   plugins.implements(plugins.IRoutes, inherit=True)
@@ -158,94 +104,15 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     '''Register the plugin's functions above as a template helper function.'''
 
     return {
-      'odm_library_document_types': get_document_types,
-      'odm_library_odc_fields': odc_fields,
-      'odm_library_metadata_fields': metadata_fields,
-      'odm_library_last_dataset': last_dataset,
-      'odm_library_get_dataset_type': get_dataset_type,
-      'odm_library_library_fields': library_fields
+      'odm_library_last_dataset': odm_library_helper.last_dataset,
+      'odm_library_get_dataset_type': odm_library_helper.get_dataset_type
     }
-
-  def _modify_package_schema_write(self, schema):
-
-    for metadata_field in odm_library_helper.metadata_fields:
-      validators_and_converters = [toolkit.get_validator('ignore_missing'),toolkit.get_converter('convert_to_extras'), ]
-      if metadata_field[2]:
-        validators_and_converters.insert(1,validate_not_empty)
-      schema.update({metadata_field[0]: validators_and_converters})
-
-    for odc_field in odm_library_helper.odc_fields:
-      validators_and_converters = [toolkit.get_validator('ignore_missing'),toolkit.get_converter('convert_to_extras'), ]
-      if odc_field[2]:
-        validators_and_converters.insert(1,validate_not_empty)
-      schema.update({odc_field[0]: validators_and_converters})
-
-    for library_field in odm_library_helper.library_fields:
-      validators_and_converters = [toolkit.get_validator('ignore_missing'),toolkit.get_converter('convert_to_extras'), ]
-      if library_field[2]:
-        validators_and_converters.insert(1,validate_not_empty)
-      schema.update({library_field[0]: validators_and_converters})
-
-    for ckan_field in odm_library_helper.ckan_fields:
-      validators_and_converters = [toolkit.get_validator('ignore_missing'),toolkit.get_converter('convert_to_extras'), ]
-      if ckan_field[2]:
-        validators_and_converters.insert(1,validate_not_empty)
-      schema.update({ckan_field[0]: validators_and_converters})
-
-    schema.update({odm_library_helper.taxonomy_dictionary: [toolkit.get_validator('ignore_missing'),toolkit.get_converter('convert_to_tags')(odm_library_helper.taxonomy_dictionary)]})
-
-    return schema
-
-  def _modify_package_schema_read(self, schema):
-
-    for metadata_field in odm_library_helper.metadata_fields:
-      validators_and_converters = [toolkit.get_converter('convert_from_extras'),toolkit.get_validator('ignore_missing')]
-      if metadata_field[2]:
-        validators_and_converters.append(validate_not_empty)
-      schema.update({metadata_field[0]: validators_and_converters})
-
-    for odc_field in odm_library_helper.odc_fields:
-      validators_and_converters = [toolkit.get_converter('convert_from_extras'),toolkit.get_validator('ignore_missing')]
-      if odc_field[2]:
-        validators_and_converters.append(validate_not_empty)
-      schema.update({odc_field[0]: validators_and_converters})
-
-    for library_field in odm_library_helper.library_fields:
-      validators_and_converters = [toolkit.get_converter('convert_from_extras'),toolkit.get_validator('ignore_missing')]
-      if library_field[2]:
-        validators_and_converters.append(validate_not_empty)
-      schema.update({library_field[0]: validators_and_converters})
-
-    for ckan_field in odm_library_helper.ckan_fields:
-      validators_and_converters = [toolkit.get_converter('convert_from_extras'),toolkit.get_validator('ignore_missing')]
-      if ckan_field[2]:
-        validators_and_converters.append(validate_not_empty)
-      schema.update({ckan_field[0]: validators_and_converters})
-
-    schema.update({odm_library_helper.taxonomy_dictionary: [toolkit.get_converter('convert_from_tags')(odm_library_helper.taxonomy_dictionary),toolkit.get_validator('ignore_missing')]})
-
-    return schema
-
-  def create_package_schema(self):
-    schema = super(OdmLibraryPlugin, self).create_package_schema()
-    schema = self._modify_package_schema_write(schema)
-    return schema
-
-  def update_package_schema(self):
-    schema = super(OdmLibraryPlugin, self).update_package_schema()
-    schema = self._modify_package_schema_write(schema)
-    return schema
-
-  def show_package_schema(self):
-    schema = super(OdmLibraryPlugin, self).show_package_schema()
-    schema = self._modify_package_schema_read(schema)
-    return schema
 
   def is_fallback(self):
     return False
 
   def package_types(self):
-    return ['library_record']
+    return [odm_library_helper.get_dataset_type()]
 
   def new_template(self):
     return 'library/new.html'
