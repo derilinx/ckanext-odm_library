@@ -9,6 +9,7 @@ import os
 sys.path.append(os.path.join(os.path.dirname(__file__), "lib"))
 import odm_library_helper
 from urlparse import urlparse
+from pylons import config
 import json
 import collections
 from routes.mapper import SubMapper
@@ -108,12 +109,6 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
       'odm_library_get_dataset_type': odm_library_helper.get_dataset_type
     }
 
-  def is_fallback(self):
-    return False
-
-  def package_types(self):
-    return [odm_library_helper.get_dataset_type()]
-
   def new_template(self):
     return 'library/new.html'
 
@@ -143,6 +138,12 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 
     odm_library_helper.session['last_dataset'] = pkg_dict
     odm_library_helper.session.save()
+
+    # Create default Issue
+    review_system = h.asbool(config.get("ckanext.issues.review_system", False))
+    if review_system:
+      if pkg_dict['type'] == 'library_record':
+        odm_library_helper.create_default_issue_library_record(pkg_dict)
 
   def after_update(self, context, pkg_dict):
     log.debug('after_update: %s', pkg_dict['name'])
