@@ -11,11 +11,11 @@
 {% endblock %}
 
 {% block content_primary_nav %}
+{% if dataset_type == 'library_record' %}
   {{ h.build_nav_icon('odm_library_read', _('Library record'), id=pkg.name) }}
-  {{ h.build_nav_icon('dataset_groups', _('Groups'), id=pkg.name) }}
   {{ h.build_nav_icon('dataset_activity', _('Activity Stream'), id=pkg.name) }}
   {{ h.build_nav_icon('related_list', _('Related'), id=pkg.name) }}
-  {% if h.issues_enabled(pkg) and h.check_access('issue_show', {'dataset_id': pkg.id}) %}
-    {{ h.build_nav_icon('issues_home', _('Issues'), package_id=pkg.name) }}
-  {% endif %}
+{% else %}
+  {{super()}}
+{% endif%}
 {% endblock %}
