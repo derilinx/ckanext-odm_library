@@ -253,5 +253,24 @@
 		"label": "General Note",
     "form_snippet": "text.html",
 		"form_placeholder": "General Note."
+	}],
+	"resource_fields": [{
+		"field_name": "url",
+		"label": "URL",
+		"preset": "resource_url_upload"
+	}, {
+		"field_name": "name",
+		"label": "Name",
+		"form_placeholder": "eg. January 2011 Gold Prices",
+		"preset": "odm_resource_name"
+	}, {
+		"field_name": "description",
+		"label": "Description",
+		"form_placeholder": "Some useful notes about the data",
+		"preset": "odm_resource_description"
+	}, {
+		"field_name": "format",
+		"label": "Format",
+		"preset": "resource_format_autocomplete"
 	}]
 }

@@ -10,23 +10,14 @@ import ckan.plugins.toolkit as toolkit
 from genshi.template.text import NewTextTemplate
 from ckan.lib.base import render
 
-DATASET_TYPE_NAME = 'library_record'
-
 log = logging.getLogger(__name__)
-
-def last_dataset():
-  ''' Returns the last dataset info stored in session'''
-  if 'last_dataset' in odm_library_helper.session:
-    return odm_library_helper.session['last_dataset']
-
-  return None
 
 def get_dataset_type():
   '''Return the dataset type'''
 
   log.debug('get_dataset_type')
 
-  return DATASET_TYPE_NAME
+  return 'library_record'
 
 def create_default_issue_library_record(pkg_info):
   ''' Uses CKAN API to add a default Issue as part of the vetting workflow for library records'''
@@ -71,5 +62,3 @@ def create_default_issue_library_record(pkg_info):
   except KeyError:
 
     log.error("Action 'issue_create' not found. Please make sure that ckanext-issues plugin is installed.")
-
-session = {}
