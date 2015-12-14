@@ -21,8 +21,8 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
   '''OD Mekong library plugin.'''
 
   plugins.implements(plugins.IConfigurer, inherit=True)
-  plugins.implements(plugins.IPackageController, inherit=True)
-  plugins.implements(plugins.ITemplateHelpers)
+  plugins.implements(plugins.ITemplateHelpers, inherit=True)
+  plugins.implements(plugins.IRoutes, inherit=True)
   plugins.implements(plugins.IFacets, inherit=True)
 
   def __init__(self, *args, **kwargs):
@@ -33,43 +33,53 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 
   def dataset_facets(self, facets_dict, package_type):
 
-    facets_dict = {
-              'license_id': toolkit._('License'),
-              'tags': toolkit._('Topics'),
-              'organization': toolkit._('Organizations'),
-              'groups': toolkit._('Groups'),
-              'res_format': toolkit._('Formats'),
-              'odm_language': toolkit._('Language'),
-              'odm_spatial_range': toolkit._('Country')
-              }
-
-    return facets_dict
+    return {
+            'license_id': toolkit._('License'),
+            'tags': toolkit._('Topics'),
+            'organization': toolkit._('Organizations'),
+            'groups': toolkit._('Groups'),
+            'res_format': toolkit._('Formats'),
+            'odm_language': toolkit._('Language'),
+            'odm_spatial_range': toolkit._('Country')
+            }
 
   def group_facets(self, facets_dict, group_type, package_type):
 
-    group_facets = {
-              'license_id': toolkit._('License'),
-              'tags': toolkit._('Topics'),
-              'organization': toolkit._('Organizations'),
-              'res_format': toolkit._('Formats'),
-              'odm_language': toolkit._('Language'),
-              'odm_spatial_range': toolkit._('Country')
-              }
-
-    return group_facets
+    return {
+            'license_id': toolkit._('License'),
+            'tags': toolkit._('Topics'),
+            'organization': toolkit._('Organizations'),
+            'res_format': toolkit._('Formats'),
+            'odm_language': toolkit._('Language'),
+            'odm_spatial_range': toolkit._('Country')
+            }
 
   def organization_facets(self, facets_dict, organization_type, package_type):
 
-    organization_facets = {
-              'license_id': toolkit._('License'),
-              'tags': toolkit._('Topics'),
-              'groups': toolkit._('Groups'),
-              'res_format': toolkit._('Formats'),
-              'odm_language': toolkit._('Language'),
-              'odm_spatial_range': toolkit._('Country')
-              }
+    return {
+            'license_id': toolkit._('License'),
+            'tags': toolkit._('Topics'),
+            'groups': toolkit._('Groups'),
+            'res_format': toolkit._('Formats'),
+            'odm_language': toolkit._('Language'),
+            'odm_spatial_range': toolkit._('Country')
+            }
 
-    return organization_facets
+  def before_map(self, m):
+
+    m.connect('odm_library_index','/library_record',controller='package',type='library_record',action='search')
+
+    m.connect('odm_library_new','/library_record/new',controller='package',type='library_record',action='new')
+
+    m.connect('odm_library_new_resource','/library_record/new_resource/{id}',controller='package',type='library_record',action='new_resource')
+
+    m.connect('odm_library_read', '/library_record/{id}',controller='package',type='library_record', action='read', ckan_icon='book')
+
+    m.connect('odm_library_edit', '/library_record/edit/{id}',controller='package',type='library_record', action='edit')
+
+    m.connect('odm_library_delete', '/library_record/delete/{id}',controller='package',type='library_record', action='delete')
+
+    return m
 
   def update_config(self, config):
     '''Update plugin config'''

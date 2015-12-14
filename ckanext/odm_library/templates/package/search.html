@@ -1,0 +1,27 @@
+{% ckan_extends %}
+
+{% block subtitle %}
+	{% if dataset_type == 'library_record' %}
+		{{ _("Library records") }}
+	{% endif %}
+{% endblock %}
+
+{% block breadcrumb_content %}
+	{% if dataset_type == 'library_record' %}
+		<li class="active">{{ h.nav_link(_('Library records'), controller='package', type='library_record', action='search', highlight_actions = 'new index') }}</li>
+	{% else %}
+		{{super()}}
+	{% endif %}
+{% endblock %}
+
+{% block page_primary_action %}
+  {% if h.check_access('package_create') %}
+		<div class="page_primary_action">
+			{% if dataset_type == 'library_record' %}
+				{% link_for _('Add library record'), controller='package', type='library_record', action='new', class_='btn btn-primary', icon='plus-sign-alt' %}
+			{% else %}
+				{{super()}}
+			{% endif %}
+		</div>
+  {% endif %}
+{% endblock %}
