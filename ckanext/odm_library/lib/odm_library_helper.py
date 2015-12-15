@@ -62,3 +62,5 @@ def create_default_issue_library_record(pkg_info):
   except KeyError:
 
     log.error("Action 'issue_create' not found. Please make sure that ckanext-issues plugin is installed.")
+
+session = {}
