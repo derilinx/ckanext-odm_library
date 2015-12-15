@@ -254,7 +254,7 @@
     "form_snippet": "text.html",
 		"form_placeholder": "General Note."
 	}],
-	"resource_fields": [{
+  "resource_fields": [{
 		"field_name": "url",
 		"label": "URL",
 		"preset": "resource_url_upload"
@@ -272,5 +272,8 @@
 		"field_name": "format",
 		"label": "Format",
 		"preset": "resource_format_autocomplete"
+	}, {
+		"field_name": "odm_spatial_range",
+		"preset": "odm_resource_spatial_range"
 	}]
 }
