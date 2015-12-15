@@ -3,6 +3,8 @@
 {% block subtitle %}
 	{% if dataset_type == 'library_record' %}
 		{{ _("Library records") }}
+	{% else %}
+		{{super()}}
 	{% endif %}
 {% endblock %}
 
