@@ -123,7 +123,7 @@
 		"label": "Date uploaded",
 		"form_placeholder": "Date a new version or update of the dataset was uploaded.",
 		"required": "true",
-		"preset": "date"
+		"preset": "odm_date"
 	}, {
 		"field_name": "odm_spatial_range",
 		"label": "Geographic area (Spatial Range)",
@@ -241,8 +241,8 @@
 	}, {
 		"field_name": "marc21_260c",
 		"label": "Publication Date",
-    "form_snippet": "text.html",
-		"form_placeholder": "Date published (YYYY)"
+		"form_placeholder": "Date published (YYYY)",
+    "form_snippet": "text.html"
 	}, {
 		"field_name": "marc21_300",
 		"label": "Pagination",
