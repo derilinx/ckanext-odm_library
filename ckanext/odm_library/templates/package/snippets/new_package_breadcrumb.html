@@ -1,0 +1,8 @@
+{% ckan_extends %}
+
+{% if dataset_type == 'library_record' %}
+	<li>{% link_for _('Library record'), controller='package', type='library_record', action='search', highlight_actions = 'new index' %}</li>
+	<li class="active">{% link_for _('Create library record'), controller='package', type='library_record', action='new' %}</li>
+{% else %}
+	{{ super() }}
+{% endif %}

@@ -1,0 +1,9 @@
+{% ckan_extends %}
+
+	{% if dataset_type == 'library_record' %}
+		{% set placeholder = placeholder if placeholder else _('Search library records...') %}
+	{% else %}
+		{{super()}}
+	{% endif%}
+
+{{super()}}

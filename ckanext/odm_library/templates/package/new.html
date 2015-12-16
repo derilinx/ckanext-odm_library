@@ -1,0 +1,9 @@
+{% ckan_extends %}
+
+{% block subtitle %}
+	{% if dataset_type == 'library_record' %}
+		{{ _('Create library record') }}
+	{% else %}
+		{{ super() }}
+	{% endif %}
+{% endblock %}

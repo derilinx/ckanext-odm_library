@@ -1,60 +1,66 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-document_types = [
-  ('advocacy_and_promotional_materials','Advocacy and promotional materials'),
-  ('analysis_discussion_papers_and_blogs','Analysis, discussion papers, and blogs'),
-  ('books_and_book_chapters','Books and book chapters'),
-  ('case_studies','Case studies'),
-  ('issue_and_policy_briefs','Issue and policy briefs'),
-  ('profiles_people','Profiles - People'),
-  ('profiles_organizations_and_projects','Profiles - Organizations  and projects'),
-  ('profiles_geographical_areas_and_sites','Profiles - Geographical areas and sites'),
-  ('conference_workshops_proceedings_and_presentations','Conference/workshop proceedings and presentations'),
-  ('reports_journal_articles_and_research_papers','Reports, journal articles, and research papers (including theses and dissertations)')
-]
+import pylons
+import logging
+import json
+import logging
+import ckan.plugins as plugins
+import ckan.plugins.toolkit as toolkit
+from genshi.template.text import NewTextTemplate
+from ckan.lib.base import render
 
-library_fields = [
-  ('document_type','Document type',False),
-  ('marc21_020','ISBN',False),
-  ('marc21_022','ISSN',False),
-  ('marc21_100','Author',False),
-  ('marc21_110','Corporate Author',False),
-  ('marc21_245','Title',False),
-  ('marc21_246','Varying Form of Title',False),
-  ('marc21_250','Edition',False),
-  ('marc21_260a','Publication Place',False),
-  ('marc21_260b','Publication Name',False),
-  ('marc21_260c','Publication Date',False),
-  ('marc21_300','Pagination',False),
-  ('marc21_500','General Note',False),
-  ('marc21_700','Co-Author',False),
-  ('marc21_710','Co-Author (Corporate)',False)
-]
+log = logging.getLogger(__name__)
 
-odc_fields = [
-  ('file_name_kh','File (Khmer)',False),
-  ('file_name_en','File (English)',False),
-  ('adopted_date','Adopted Date',False),
-  ('number_en','Number (English)',False),
-  ('number_kh','Number (Khmer)',False),
-  ('published_date','Publication date',False),
-  ('published_under','Published under',False)
-]
+def get_dataset_type():
+  '''Return the dataset type'''
 
-metadata_fields = [
-  ('odm_copyright','Copyright',False),
-  ('odm_access_and_use_constraints','Access and Use Constraints',False),
-  ('odm_contact','Contact',False),
-  ('odm_language','Language',True),
-  ('odm_date_uploaded','Date Uploaded',True),
-  ('odm_spatial_range','Geographic area (Spatial Range)',True)
-]
+  log.debug('get_dataset_type')
 
-ckan_fields= [
-  ('version','Version',True)
-]
+  return 'library_record'
 
-taxonomy_dictionary = 'taxonomy'
+def create_default_issue_library_record(pkg_info):
+  ''' Uses CKAN API to add a default Issue as part of the vetting workflow for library records'''
+  try:
+
+    extra_vars = {
+        't0': toolkit._("Thank you for uploading the library item. You should have received a confirmation email from OD Mekong Datahub. This library item is still unpublished. Your item can only be published after you review this form and after our administrators approve your entry."),
+        't1': toolkit._("It is important that you have entered the correct information in your library record form. We also ask that all contributors complete as many fields as possible."),
+        't2': toolkit._("Please take this opportunity to review your library record. If you would like to make any changes please select your library record and then click on the Manage button on the top right corner."),
+        't3': toolkit._("Please CHECK YOUR SPELLING against the original item to ensure the item is recorded correctly."),
+        't4': toolkit._("Please review your library record form again for the mandatory fields:"),
+        't5': toolkit._("Title (Please use Associated Press style title where the first letter is capitalized and the rest of the title is not, i.e. 'Study of Cambodian forests and lakes from 1992 to 1994')"),
+        't6': toolkit._("Language"),
+        't7': toolkit._("Edition / Version"),
+        't8': toolkit._("Geographical area"),
+        't9': toolkit._("Date uploaded"),
+        't10': toolkit._("Please review again the following information, vital to other users who may search for your record:"),
+        't11': toolkit._("Summary (Make sure this is a concise description of the record in your own words, please do not just 'copy' and 'paste' an abstract by the original author)"),
+        't12': toolkit._("Topics"),
+        't13': toolkit._("License (Make sure you indicated the correct license. Additional information on creative commons is found here http://opendefinition.org/licenses/. If there is no license, please indicate 'license unspecified')"),
+        't14': toolkit._("Copyright"),
+        't15': toolkit._("Access and Use Constraints"),
+        't16': toolkit._("Author"),
+        't17': toolkit._("Co-author"),
+        't18': toolkit._("Corporate Author"),
+        't19': toolkit._("Publisher"),
+        't20': toolkit._("Lastly, please check again for the following information on the library record you entered. If the information is available, please include it in the appropriate field. This will greatly improve the searchability of your library record item or provide information that a user will find useful:"),
+        't21': toolkit._("ISSN or ISBN numbers"),
+        't22': toolkit._("Publication Place"),
+        't23': toolkit._("Publication Date"),
+        't24': toolkit._("Pagination"),
+        't25': toolkit._("Our administrators need to review the library record as well. They will close fixed issues or open new issues if there are any other inconsistencies. Once all issues have been closed, the item will be published."),
+        't26': toolkit._("Thank you for sharing,"),
+        't27': toolkit._("Open Development Team")
+    }
+
+    issue_message = render('messages/default_issue_library_record.txt',extra_vars=extra_vars,loader_class=NewTextTemplate)
+
+    params = {'title':'User Library record Upload Checklist','description':issue_message,'dataset_id':pkg_info['id']}
+    toolkit.get_action('issue_create')(data_dict=params)
+
+  except KeyError:
+
+    log.error("Action 'issue_create' not found. Please make sure that ckanext-issues plugin is installed.")
 
 session = {}
