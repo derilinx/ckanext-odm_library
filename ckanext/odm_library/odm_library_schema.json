@@ -272,8 +272,8 @@
 	}, {
 		"field_name": "marc21_260c",
 		"label": "Publication date",
-		"form_placeholder": "Date published",
-    "preset": "odm_date"
+		"form_placeholder": "Date published (YYYY)",
+    "preset": "number"
 	}, {
 		"field_name": "marc21_300",
     "preset": "fluent_text_single",
