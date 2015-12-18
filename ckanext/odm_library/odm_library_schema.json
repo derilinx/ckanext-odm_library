@@ -37,7 +37,7 @@
 			"label": "Conference/workshop proceedings and presentations"
 		}, {
 			"value": "reports_journal_articles_and_research_papers",
-			"label": "Reports, journal articles, and research papers (including theses and dissertations"
+			"label": "Reports, journal articles, and research papers (including theses and dissertations)"
 		}]
 	},{
 		"field_name": "odm_language",
@@ -86,6 +86,7 @@
 	},{
 		"field_name": "title",
 		"label": "Formal full title",
+    "required": "true",
 		"preset": "title",
 		"form_placeholder": "eg. A descriptive title"
 	}, {
