@@ -4,79 +4,44 @@
 	"about": "ODM Library metadata schema",
 	"about_url": "http://github.com/open-data/ckanext-scheming",
 	"dataset_fields": [{
-		"field_name": "title",
-		"label": "Title",
-		"preset": "title",
-		"form_placeholder": "eg. A descriptive title"
-	}, {
-		"field_name": "title_translated",
-		"preset": "fluent_core_translated_single",
-		"label": {
-			"en": "Title (en)",
-			"th": "หัวข้อ (th)",
-			"km": "ចំណងជើង (km)",
-			"vi": "Tiêu đề (vi)"
-		},
-		"form_languages": ["en", "th", "km", "vi"]
-	}, {
-		"field_name": "name",
-		"label": "URL",
-		"preset": "dataset_slug",
-		"form_placeholder": "eg. my-dataset"
-	}, {
-		"field_name": "notes_translated",
-		"preset": "fluent_core_translated_markdown_single",
-		"label": {
-			"en": "Description",
-			"th": "รายละเอียด",
-			"km": "ការពិពណ៌នា",
-			"vi": "Mô tả"
-		},
-		"form_languages": ["en", "th", "km", "vi"]
-	}, {
-		"field_name": "taxonomy",
-		"label": "Topics",
-		"preset": "odm_taxonomy",
-		"form_placeholder": "eg. economy, mental health, government"
-	}, {
-		"field_name": "license_id",
-		"label": "License",
-		"preset": "odm_license",
-		"help_text": "License definitions and additional information can be found at http://opendefinition.org/"
-	}, {
-		"field_name": "odm_copyright",
-		"label": "Copyright",
-		"preset": "odm_copyright",
-		"help_text": "Select 'yes', 'no' or 'unclear copyright' about the copyright of the dataset. If copyright of any type is present, describe further in Access and User Constraints."
-	}, {
-		"field_name": "odm_access_and_use_constraint",
-		"preset": "fluent_markdown_single",
-		"label": {
-			"en": "Access and Use Constraints",
-			"th": "การเข้าถึงและข้อจำกัด",
-			"km": "កំហិតនៃការចូល និងប្រើប្រាស់",
-			"vi": "Hạn chế truy cập và sử dụng"
-		},
-		"form_languages": ["en", "th", "km", "vi"],
-		"form_placeholder": "A few sentences describing legal considerations for people who access the website and/or use its contents."
-	}, {
-		"field_name": "owner_org",
-		"label": "Organization",
-		"preset": "dataset_organization"
-	}, {
-		"field_name": "version",
-		"label": "Version / Edition",
-		"validators": "ignore_missing unicode package_version_validator",
-		"form_placeholder": "1.0",
-		"required": "true"
-	}, {
-		"field_name": "odm_contact",
-		"label": "Contact",
-		"form_snippet": "markdown.html",
-		"form_placeholder": "Contact information for the individual or organization that is responsible for or most knowledgeable about the dataset. This could be the author of a report, the contact information for the relevant department of an organization that produced a report, or the data analyst, mapper or researcher that produced a dataset or report."
-	}, {
+		"field_name": "document_type",
+		"label": "Document type",
+		"preset": "select",
+		"required": "true",
+		"choices": [{
+			"value": "advocacy_and_promotional_materials",
+			"label": "Advocacy and promotional materials"
+		}, {
+			"value": "analysis_discussion_papers_and_blogs",
+			"label": "Analysis, discussion papers, and blogs"
+		}, {
+			"value": "books_and_book_chapters",
+			"label": "Books and book chapters"
+		}, {
+			"value": "case_studies",
+			"label": "Case studies"
+		}, {
+			"value": "issue_and_policy_briefs",
+			"label": "Issue and policy briefs"
+		}, {
+			"value": "profiles_people",
+			"label": "Profiles - People"
+		}, {
+			"value": "profiles_organizations_and_projects",
+			"label": "Profiles - Organizations  and projects"
+		}, {
+			"value": "profiles_geographical_areas_and_sites",
+			"label": "Profiles - Geographical areas and sites"
+		}, {
+			"value": "conference_workshops_proceedings_and_presentations",
+			"label": "Conference/workshop proceedings and presentations"
+		}, {
+			"value": "reports_journal_articles_and_research_papers",
+			"label": "Reports, journal articles, and research papers (including theses and dissertations"
+		}]
+	},{
 		"field_name": "odm_language",
-		"label": "Language",
+		"label": "Language (of doc)",
 		"required": "true",
 		"form_placeholder": "Language(s) of the dataset, including resources within dataset.",
 		"preset": "multiple_select",
@@ -118,12 +83,53 @@
 			"value": "other",
 			"label": "Other"
 		}]
+	},{
+		"field_name": "title",
+		"label": "Formal full title",
+		"preset": "title",
+		"form_placeholder": "eg. A descriptive title"
 	}, {
-		"field_name": "odm_date_uploaded",
-		"label": "Date uploaded",
-		"form_placeholder": "Date a new version or update of the dataset was uploaded.",
-		"required": "true",
-		"preset": "odm_date"
+		"field_name": "name",
+		"label": "URL",
+		"preset": "dataset_slug",
+		"form_placeholder": "eg. my-dataset"
+	}, {
+		"field_name": "title_translated",
+		"preset": "fluent_core_translated_single",
+		"label": {
+			"en": "Formal full title (en)",
+			"th": "Formal full title (th)",
+			"km": "Formal full title (km)",
+			"vi": "Formal full title (vi)"
+		},
+		"form_languages": ["en", "th", "km", "vi"]
+	}, {
+		"field_name": "marc21_246",
+		"label": "Short title (alternative/varying form of title)",
+    "label": {
+			"en": "Short title (alternative/varying form of title) (en)",
+			"th": "Short title (alternative/varying form of title) (th)",
+			"km": "Short title (alternative/varying form of title) (km)",
+			"vi": "Short title (alternative/varying form of title) (vi)"
+		},
+		"form_languages": ["en", "th", "km", "vi"],
+		"form_snippet": "text.html",
+		"form_placeholder": "Parallel title or translation."
+	}, {
+		"field_name": "taxonomy",
+		"label": "Topics",
+		"preset": "odm_taxonomy",
+		"form_placeholder": "eg. economy, mental health, government"
+	}, {
+		"field_name": "notes_translated",
+		"preset": "fluent_core_translated_markdown_single",
+		"label": {
+			"en": "Short summary (contents) (en)",
+			"th": "Short summary (contents) (th)",
+			"km": "Short summary (contents) (km)",
+			"vi": "Short summary (contents) (vi)"
+		},
+		"form_languages": ["en", "th", "km", "vi"]
 	}, {
 		"field_name": "odm_spatial_range",
 		"label": "Geographic area (Spatial Range)",
@@ -163,41 +169,73 @@
 			"label": "Myanmar"
 		}]
 	}, {
-		"field_name": "document_type",
-		"label": "Document type",
-		"preset": "select",
+		"field_name": "odm_copyright",
+		"label": "Copyright",
+		"preset": "odm_copyright",
+		"help_text": "Select 'yes', 'no' or 'unclear copyright' about the copyright of the dataset. If copyright of any type is present, describe further in Access and User Constraints."
+	}, {
+		"field_name": "odm_access_and_use_constraint",
+		"preset": "fluent_markdown_single",
+		"label": {
+			"en": "Access and Use Constraints",
+			"th": "การเข้าถึงและข้อจำกัด",
+			"km": "កំហិតនៃការចូល និងប្រើប្រាស់",
+			"vi": "Hạn chế truy cập và sử dụng"
+		},
+		"form_languages": ["en", "th", "km", "vi"],
+		"form_placeholder": "A few sentences describing legal considerations for people who access the website and/or use its contents."
+	}, {
+		"field_name": "version",
+		"label": "Version / Edition",
+		"validators": "ignore_missing unicode package_version_validator",
+		"form_placeholder": "1.0",
+		"required": "true"
+	}, {
+		"field_name": "owner_org",
+		"label": "Organization",
+		"preset": "dataset_organization"
+	}, {
+		"field_name": "odm_date_uploaded",
+		"label": "Date uploaded",
+		"form_placeholder": "Date a new version or update of the dataset was uploaded.",
 		"required": "true",
-		"choices": [{
-			"value": "advocacy_and_promotional_materials",
-			"label": "Advocacy and promotional materials"
-		}, {
-			"value": "analysis_discussion_papers_and_blogs",
-			"label": "Analysis, discussion papers, and blogs"
-		}, {
-			"value": "books_and_book_chapters",
-			"label": "Books and book chapters"
-		}, {
-			"value": "case_studies",
-			"label": "Case studies"
-		}, {
-			"value": "issue_and_policy_briefs",
-			"label": "Issue and policy briefs"
-		}, {
-			"value": "profiles_people",
-			"label": "Profiles - People"
-		}, {
-			"value": "profiles_organizations_and_projects",
-			"label": "Profiles - Organizations  and projects"
-		}, {
-			"value": "profiles_geographical_areas_and_sites",
-			"label": "Profiles - Geographical areas and sites"
-		}, {
-			"value": "conference_workshops_proceedings_and_presentations",
-			"label": "Conference/workshop proceedings and presentations"
-		}, {
-			"value": "reports_journal_articles_and_research_papers",
-			"label": "Reports, journal articles, and research papers (including theses and dissertations"
-		}]
+		"preset": "odm_date"
+	}, {
+		"field_name": "license_id",
+		"label": "License",
+		"preset": "odm_license",
+		"help_text": "License definitions and additional information can be found at http://opendefinition.org/"
+	}, {
+		"field_name": "odm_contact",
+    "preset": "fluent_markdown_single",
+		"label": {
+			"en": "Contact",
+			"th": "ข้อมูลติดต่อ",
+			"km": "ទំនាក់ទំនង",
+			"vi": "Liên hệ"
+		},
+		"form_languages": ["en", "th", "km", "vi"],
+		"form_placeholder": "Contact information for the individual or organization that is responsible for or most knowledgeable about the dataset. This could be the author of a report, the contact information for the relevant department of an organization that produced a report, or the data analyst, mapper or researcher that produced a dataset or report."
+	}, {
+		"field_name": "marc21_100",
+		"label": "Author (individual)",
+		"form_snippet": "text.html",
+		"form_placeholder": "Main Entry-Personal Name (author)."
+	}, {
+		"field_name": "marc21_110",
+		"label": "Author (corporate)",
+		"form_snippet": "text.html",
+		"form_placeholder": "Main Entry-Corporate Name (corporate author) or title of journal."
+	}, {
+		"field_name": "marc21_700",
+		"label": "Co-Author (individual)",
+		"form_snippet": "text.html",
+		"form_placeholder": "Personal Name (co-author), more than one author. "
+	}, {
+		"field_name": "marc21_710",
+		"label": "Co-Author (coorporate)",
+		"form_snippet": "text.html",
+		"form_placeholder": "Corporate Name, more than one Corporate. "
 	}, {
 		"field_name": "marc21_020",
 		"label": "ISBN",
@@ -209,49 +247,53 @@
     "form_snippet": "text.html",
 		"form_placeholder": ""
 	}, {
-		"field_name": "marc21_100",
-		"label": "Author",
-		"form_snippet": "text.html",
-		"form_placeholder": "Main Entry-Personal Name (author)."
-	}, {
-		"field_name": "marc21_110",
-		"label": "Corporate Author",
-		"form_snippet": "text.html",
-		"help_text": "Main Entry-Corporate Name (corporate author) or title of journal."
-	}, {
-		"field_name": "marc21_710",
-		"label": "Co-Author (Corporate)",
-		"form_snippet": "text.html",
-		"form_placeholder": "Corporate Name, more than one Corporate."
-	}, {
-		"field_name": "marc21_246",
-		"label": "Varying Form of Title",
-		"form_snippet": "text.html",
-		"form_placeholder": "Parallel title or translation."
-	}, {
 		"field_name": "marc21_260a",
-		"label": "Publication Place",
-		"form_snippet": "text.html",
+    "preset": "fluent_text_single",
+    "label": {
+			"en": "Publication place",
+			"th": "Publication place",
+			"km": "Publication place",
+			"vi": "Publication place"
+		},
+		"form_languages": ["en", "th", "km", "vi"],
 		"form_placeholder": "Place of publisher"
 	}, {
 		"field_name": "marc21_260b",
-		"label": "Publisher",
-    "form_snippet": "text.html",
+    "preset": "fluent_text_single",
+    "label": {
+			"en": "Publisher",
+			"th": "ผู้พิมพ์",
+			"km": "អ្នកបោះពុម្ពផ្សាយ",
+			"vi": "Nhà xuất bản"
+		},
+		"form_languages": ["en", "th", "km", "vi"],
 		"form_placeholder": "Name of publishing organization"
 	}, {
 		"field_name": "marc21_260c",
-		"label": "Publication Date",
-		"form_placeholder": "Date published (YYYY)",
+		"label": "Publication date",
+		"form_placeholder": "Date published",
     "form_snippet": "text.html"
 	}, {
 		"field_name": "marc21_300",
-		"label": "Pagination",
-    "form_snippet": "text.html",
+    "preset": "fluent_text_single",
+		"label": {
+			"en": "Pagination",
+			"th": "การให้เลขหน้า",
+			"km": "ការបង់លេខ",
+			"vi": "Đánh số trang"
+		},
+		"form_languages": ["en", "th", "km", "vi"],
 		"form_placeholder": "Physical Description (pagination)."
 	}, {
 		"field_name": "marc21_500",
-		"label": "General Note",
-    "form_snippet": "text.html",
+    "preset": "fluent_markdown_single",
+		"label": {
+			"en": "General Note",
+			"th": "หมายเหตุทั่วไป",
+			"km": "កំណត់សំគាល់ទូទៅង",
+			"vi": "Chú ý"
+		},
+		"form_languages": ["en", "th", "km", "vi"],
 		"form_placeholder": "General Note."
 	}],
   "resource_fields": [{
