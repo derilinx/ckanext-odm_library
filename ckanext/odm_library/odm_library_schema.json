@@ -272,7 +272,7 @@
 		"field_name": "marc21_260c",
 		"label": "Publication date",
 		"form_placeholder": "Date published",
-    "form_snippet": "text.html"
+    "preset": "odm_date"
 	}, {
 		"field_name": "marc21_300",
     "preset": "fluent_text_single",
