@@ -53,7 +53,7 @@
 			"value": "en",
 			"label": "English"
 		}, {
-			"value": "kh",
+			"value": "km",
 			"label": "Khmer"
 		}, {
 			"value": "lo",
@@ -154,7 +154,7 @@
 			"value": "lmc",
 			"label": "Lower Mekong countries"
 		}, {
-			"value": "kh",
+			"value": "km",
 			"label": "Cambodia"
 		}, {
 			"value": "vn",
@@ -327,7 +327,7 @@
 			"value": "en",
 			"label": "English"
 		}, {
-			"value": "kh",
+			"value": "km",
 			"label": "Khmer"
 		}, {
 			"value": "lo",
