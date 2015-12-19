@@ -98,20 +98,20 @@
 		"field_name": "title_translated",
 		"preset": "fluent_core_translated_single",
 		"label": {
-			"en": "Formal full title (en)",
-			"th": "Formal full title (th)",
-			"km": "Formal full title (km)",
-			"vi": "Formal full title (vi)"
+			"en": "Formal full title",
+			"th": "Formal full title",
+			"km": "Formal full title",
+			"vi": "Formal full title"
 		},
 		"form_languages": ["en", "th", "km", "vi"]
 	}, {
 		"field_name": "marc21_246",
 		"label": "Short title (alternative/varying form of title)",
     "label": {
-			"en": "Short title (alternative/varying form of title) (en)",
-			"th": "Short title (alternative/varying form of title) (th)",
-			"km": "Short title (alternative/varying form of title) (km)",
-			"vi": "Short title (alternative/varying form of title) (vi)"
+			"en": "Short title (alternative/varying form of title)",
+			"th": "Short title (alternative/varying form of title)",
+			"km": "Short title (alternative/varying form of title)",
+			"vi": "Short title (alternative/varying form of title)"
 		},
 		"form_languages": ["en", "th", "km", "vi"],
 		"form_snippet": "text.html",
@@ -125,10 +125,10 @@
 		"field_name": "notes_translated",
 		"preset": "fluent_core_translated_markdown_single",
 		"label": {
-			"en": "Short summary (contents) (en)",
-			"th": "Short summary (contents) (th)",
-			"km": "Short summary (contents) (km)",
-			"vi": "Short summary (contents) (vi)"
+			"en": "Short summary (contents)",
+			"th": "Short summary (contents)",
+			"km": "Short summary (contents)",
+			"vi": "Short summary (contents)"
 		},
 		"form_languages": ["en", "th", "km", "vi"]
 	}, {
