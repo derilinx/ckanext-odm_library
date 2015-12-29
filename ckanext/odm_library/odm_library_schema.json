@@ -83,12 +83,6 @@
 			"value": "other",
 			"label": "Other"
 		}]
-	},{
-		"field_name": "title",
-		"label": "Formal full title",
-    "required": "true",
-		"preset": "title",
-		"form_placeholder": "eg. A descriptive title"
 	}, {
 		"field_name": "name",
 		"label": "URL",
