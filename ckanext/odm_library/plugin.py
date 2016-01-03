@@ -62,16 +62,22 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
     }
 
   def before_create(self, context, resource):
-    log.info('before_create')
+
+    if context['package'].type == 'library_record':
+      log.info('before_create')
 
   def after_create(self, context, pkg_dict):
-    log.debug('after_create: %s', pkg_dict['name'])
 
-    # Create default Issue
-    review_system = h.asbool(config.get("ckanext.issues.review_system", False))
-    if review_system:
-      if pkg_dict['type'] == 'library_record':
-        odm_library_helper.create_default_issue_library_record(pkg_dict)
+    if context['package'].type == 'library_record':
+      log.debug('after_create: %s', pkg_dict['name'])
+
+      # Create default Issue
+      review_system = h.asbool(config.get("ckanext.issues.review_system", False))
+      if review_system:
+        if pkg_dict['type'] == 'library_record':
+          odm_library_helper.create_default_issue_library_record(pkg_dict)
 
   def after_update(self, context, pkg_dict):
-    log.debug('after_update: %s', pkg_dict['name'])
+
+    if context['package'].type == 'library_record':
+      log.debug('after_update: %s', pkg_dict['name'])
