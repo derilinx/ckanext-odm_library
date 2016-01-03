@@ -63,7 +63,9 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 
   def after_create(self, context, pkg_dict):
 
-    if 'type' in pkg_dict and pkg_dict['type'] == 'library_record':
+    dataset_type = context['package'].type if 'package' in context else pkg_dict['type']
+
+    if dataset_type == 'library_record':
       log.debug('after_create: %s', pkg_dict['name'])
 
       # Create default Issue
