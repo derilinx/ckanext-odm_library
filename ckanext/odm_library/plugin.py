@@ -61,14 +61,9 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
       'odm_library_get_dataset_type': odm_library_helper.get_dataset_type
     }
 
-  def before_create(self, context, resource):
-
-    if context['package'].type == 'library_record':
-      log.info('before_create')
-
   def after_create(self, context, pkg_dict):
 
-    if context['package'].type == 'library_record':
+    if 'type' in pkg_dict and pkg_dict['type'] == 'library_record':
       log.debug('after_create: %s', pkg_dict['name'])
 
       # Create default Issue
@@ -76,8 +71,3 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
       if review_system:
         if pkg_dict['type'] == 'library_record':
           odm_library_helper.create_default_issue_library_record(pkg_dict)
-
-  def after_update(self, context, pkg_dict):
-
-    if context['package'].type == 'library_record':
-      log.debug('after_update: %s', pkg_dict['name'])
