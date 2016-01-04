@@ -100,7 +100,8 @@
 		"form_languages": ["en", "th", "km", "vi"],
     "form_attrs": {
       "data-module": "slug-preview-target"
-    }
+    },
+		"form_placeholder": "Main title"
 	}, {
 		"field_name": "marc21_246",
 		"label": "Short title (alternative/varying form of title)",
@@ -128,7 +129,8 @@
 			"km": "Short summary (contents)",
 			"vi": "Short summary (contents)"
 		},
-		"form_languages": ["en", "th", "km", "vi"]
+		"form_languages": ["en", "th", "km", "vi"],
+		"form_placeholder": "Abstract or Summary of book or article"
 	}, {
 		"field_name": "odm_spatial_range",
 		"label": "Geographic area (Spatial Range)",
@@ -187,7 +189,7 @@
 		"field_name": "version",
 		"label": "Version / Edition",
 		"validators": "scheming_required unicode package_version_validator",
-		"form_placeholder": "1.0",
+		"form_placeholder": "Version of publication",
 		"required": "true"
 	}, {
 		"field_name": "owner_org",
