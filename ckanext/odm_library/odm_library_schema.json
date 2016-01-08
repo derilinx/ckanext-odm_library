@@ -41,7 +41,7 @@
 		}]
 	},{
 		"field_name": "odm_language",
-		"label": "Language (of doc)",
+		"label": "Language of document",
 		"required": "true",
 		"form_placeholder": "Language(s) of the dataset, including resources within dataset.",
 		"preset": "multiple_select",
@@ -130,10 +130,10 @@
 			"vi": "Short summary (contents)"
 		},
 		"form_languages": ["en", "th", "km", "vi"],
-		"form_placeholder": "Abstract or Summary of book or article"
+		"form_placeholder": "Abstract or summary of book or articlee"
 	}, {
 		"field_name": "odm_spatial_range",
-		"label": "Geographic area (Spatial Range)",
+		"label": "Geographic area (spatial range)",
 		"form_placeholder": "The geographic area that the dataset is relevant to (i.e. Cambodia, Laos).",
 		"preset": "multiple_select",
 		"required": "true",
@@ -178,7 +178,7 @@
 		"field_name": "odm_access_and_use_constraints",
 		"preset": "fluent_markdown_single",
 		"label": {
-			"en": "Access and Use Constraints",
+			"en": "Access and use constraints",
 			"th": "การเข้าถึงและข้อจำกัด",
 			"km": "កំហិតនៃការចូល និងប្រើប្រាស់",
 			"vi": "Hạn chế truy cập và sử dụng"
@@ -229,24 +229,24 @@
 		"form_placeholder": "Main Entry-Corporate Name (corporate author) or title of journal."
 	}, {
 		"field_name": "marc21_700",
-		"label": "Co-Author (individual)",
+		"label": "Co-author (individual)",
 		"form_snippet": "text.html",
 		"form_placeholder": "Personal Name (co-author), more than one author. "
 	}, {
 		"field_name": "marc21_710",
-		"label": "Co-Author (coorporate)",
+		"label": "Co-author (coorporate)",
 		"form_snippet": "text.html",
 		"form_placeholder": "Corporate Name, more than one Corporate. "
 	}, {
 		"field_name": "marc21_020",
-		"label": "ISBN",
+		"label": "ISBN number",
 		"form_snippet": "text.html",
-		"form_placeholder": "A 13-digit number that uniquely identifies  most books and book-like products please enter if ISBN appears on publication."
+		"form_placeholder": "13-digit unique number that uniquely identify a commercial book"
 	}, {
 		"field_name": "marc21_022",
-		"label": "ISSN",
+		"label": "ISSN number",
     "form_snippet": "text.html",
-		"form_placeholder": ""
+		"form_placeholder": "8-digit number that uniquely identify a serial publication"
 	}, {
 		"field_name": "marc21_260a",
     "preset": "fluent_text_single",
@@ -284,18 +284,18 @@
 			"vi": "Đánh số trang"
 		},
 		"form_languages": ["en", "th", "km", "vi"],
-		"form_placeholder": "Physical Description (pagination)."
+		"form_placeholder": "Physical description (pagination)"
 	}, {
 		"field_name": "marc21_500",
     "preset": "fluent_markdown_single",
 		"label": {
-			"en": "General Note",
+			"en": "General note",
 			"th": "หมายเหตุทั่วไป",
 			"km": "កំណត់សំគាល់ទូទៅង",
 			"vi": "Chú ý"
 		},
 		"form_languages": ["en", "th", "km", "vi"],
-		"form_placeholder": "General Note."
+		"form_placeholder": "General note."
 	}],
   "resource_fields": [{
 		"field_name": "url",
