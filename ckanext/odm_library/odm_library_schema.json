@@ -38,6 +38,9 @@
 		}, {
 			"value": "reports_journal_articles_and_research_papers",
 			"label": "Reports, journal articles, and research papers (including theses and dissertations)"
+		}, {
+			"value": "company_profiles",
+			"label": "Company profiles"
 		}]
 	},{
 		"field_name": "odm_language",
