@@ -7,7 +7,7 @@
 		"field_name": "document_type",
 		"label": "Document type",
 		"preset": "select",
-		"required": "true",
+		"required": "false",
 		"choices": [{
 			"value": "advocacy_and_promotional_materials",
 			"label": "Advocacy and promotional materials"
@@ -45,7 +45,7 @@
 	},{
 		"field_name": "odm_language",
 		"label": "Language of document",
-		"required": "true",
+		"required": "false",
 		"form_placeholder": "Language(s) of the dataset, including resources within dataset.",
 		"preset": "multiple_select",
 		"select_size": 4,
@@ -121,7 +121,7 @@
 		"field_name": "taxonomy",
 		"label": "Topics",
 		"preset": "odm_taxonomy",
-    "required": "true",
+    "required": "false",
 		"form_placeholder": "e.g. economy, mental health, government"
 	}, {
 		"field_name": "notes_translated",
@@ -139,7 +139,7 @@
 		"label": "Geographic area (spatial range)",
 		"form_placeholder": "The geographic area that the dataset is relevant to (i.e. Cambodia, Laos).",
 		"preset": "multiple_select",
-		"required": "true",
+		"required": "false",
 		"select_size": 4,
 		"choices": [{
 			"value": "global",
@@ -193,7 +193,7 @@
 		"label": "Version / Edition",
 		"validators": "scheming_required unicode package_version_validator",
 		"form_placeholder": "Version of publication",
-		"required": "true"
+		"required": "false"
 	}, {
 		"field_name": "owner_org",
 		"label": "Organization",
@@ -202,7 +202,7 @@
 		"field_name": "odm_date_uploaded",
 		"label": "Date uploaded",
 		"form_placeholder": "Date a new version or update of the dataset was uploaded.",
-		"required": "true",
+		"required": "false",
 		"preset": "odm_date"
 	}, {
 		"field_name": "license_id",
