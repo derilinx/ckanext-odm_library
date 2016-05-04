@@ -25,5 +25,8 @@ setup(
     entry_points='''
         [ckan.plugins]
         odm_library=ckanext.odm_library.plugin:OdmLibraryPlugin
+
+        [ckan.rdf.profiles]
+        odm_dcat_library=ckanext.odm_library.odm_library_profiles:ODMDCATBasicProfileLibrary
     ''',
 )
