@@ -1,22 +1,20 @@
 #
 # Translators:
-# ODM Vietnam <vietnam@opendevmekong.net>, 2015
-# PanNature Vietnam <contact@nature.org.vn>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: ODM ckanext-odm_library\n"
 "POT-Creation-Date: 2016-05-16 12:38+0200\n"
 "PO-Revision-Date: 2016-05-16 12:54+0200\n"
-"Last-Translator: Alex Corbi <a.corbi@gmail.com>\n"
-"Language-Team: Vietnamese (http://www.transifex.com/open-development-mekong/"
-"odm-ckanext-odm_library/language/vi/)\n"
+"Last-Translator: \n"
+"Language-Team: Lao (http://www.transifex.com/open-development-mekong/odm-"
+"ckanext-odm_library/language/lo/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: vi\n"
+"Language: lo\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 1.8.4\n"
-"X-Poedit-Basepath: ../ckanext\n"
+"X-Poedit-Basepath: ../../../ckanext\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -61,7 +59,7 @@ msgstr ""
 
 #: odm_library/lib/odm_library_helper.py:33
 msgid "Language"
-msgstr "Ngôn ngữ"
+msgstr ""
 
 #: odm_library/lib/odm_library_helper.py:34
 msgid "Edition / Version"
@@ -117,11 +115,11 @@ msgstr ""
 
 #: odm_library/lib/odm_library_helper.py:45
 msgid "Corporate Author"
-msgstr "Nhóm tác giả"
+msgstr ""
 
 #: odm_library/lib/odm_library_helper.py:46
 msgid "Publisher"
-msgstr "Nhà xuất bản"
+msgstr ""
 
 #: odm_library/lib/odm_library_helper.py:47
 msgid ""
@@ -141,11 +139,11 @@ msgstr ""
 
 #: odm_library/lib/odm_library_helper.py:50
 msgid "Publication Date"
-msgstr "Ngày công bố"
+msgstr ""
 
 #: odm_library/lib/odm_library_helper.py:51
 msgid "Pagination"
-msgstr "Đánh số trang"
+msgstr ""
 
 #: odm_library/lib/odm_library_helper.py:52
 msgid ""
@@ -165,7 +163,7 @@ msgstr ""
 
 #: odm_library/templates/header.html:5
 msgid "Library"
-msgstr "Thư viện"
+msgstr ""
 
 #: odm_library/templates/package/base.html:5
 #: odm_library/templates/package/base.html:15

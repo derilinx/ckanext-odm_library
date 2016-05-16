@@ -1,21 +1,21 @@
 #
 # Translators:
-# ODM Cambodia <cambodia@opendevmekong.net>, 2015
+# Misharim <misharim@gmail.com>, 2015
 msgid ""
 msgstr ""
 "Project-Id-Version: ODM ckanext-odm_library\n"
 "POT-Creation-Date: 2016-05-16 12:38+0200\n"
 "PO-Revision-Date: 2016-05-16 12:54+0200\n"
 "Last-Translator: Alex Corbi <a.corbi@gmail.com>\n"
-"Language-Team: Khmer (http://www.transifex.com/open-development-mekong/odm-"
-"ckanext-odm_library/language/km/)\n"
+"Language-Team: Thai (http://www.transifex.com/open-development-mekong/odm-"
+"ckanext-odm_library/language/th/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: km\n"
+"Language: th\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Poedit 1.8.4\n"
-"X-Poedit-Basepath: ../ckanext\n"
+"X-Poedit-Basepath: ../../../ckanext\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: .\n"
 
@@ -60,7 +60,7 @@ msgstr ""
 
 #: odm_library/lib/odm_library_helper.py:33
 msgid "Language"
-msgstr "ភាសា"
+msgstr "ภาษา"
 
 #: odm_library/lib/odm_library_helper.py:34
 msgid "Edition / Version"
@@ -116,11 +116,11 @@ msgstr ""
 
 #: odm_library/lib/odm_library_helper.py:45
 msgid "Corporate Author"
-msgstr "អ្នកនិពន្ធរួមគ្នា"
+msgstr ""
 
 #: odm_library/lib/odm_library_helper.py:46
 msgid "Publisher"
-msgstr "អ្នកបោះពុម្ពផ្សាយ"
+msgstr ""
 
 #: odm_library/lib/odm_library_helper.py:47
 msgid ""
@@ -140,11 +140,11 @@ msgstr ""
 
 #: odm_library/lib/odm_library_helper.py:50
 msgid "Publication Date"
-msgstr "កាលបរិច្ឆេទការបោះពុម្ពផ្សាយ"
+msgstr ""
 
 #: odm_library/lib/odm_library_helper.py:51
 msgid "Pagination"
-msgstr "ការបង់លេខ"
+msgstr ""
 
 #: odm_library/lib/odm_library_helper.py:52
 msgid ""
@@ -164,7 +164,7 @@ msgstr ""
 
 #: odm_library/templates/header.html:5
 msgid "Library"
-msgstr "បណ្ណាល័យ"
+msgstr "ห้องสมุด"
 
 #: odm_library/templates/package/base.html:5
 #: odm_library/templates/package/base.html:15
