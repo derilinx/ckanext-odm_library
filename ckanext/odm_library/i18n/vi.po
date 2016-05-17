@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ODM ckanext-odm_library\n"
-"POT-Creation-Date: 2016-05-17 14:37+0200\n"
-"PO-Revision-Date: 2016-05-17 12:38+0000\n"
+"POT-Creation-Date: 2016-05-17 15:21+0200\n"
+"PO-Revision-Date: 2016-05-17 13:22+0000\n"
 "Last-Translator: Alex Corbi <a.corbi@gmail.com>\n"
 "Language-Team: Vietnamese (http://www.transifex.com/open-development-mekong/odm-ckanext-odm_library/language/vi/)\n"
 "MIME-Version: 1.0\n"
@@ -20,6 +20,264 @@ msgstr ""
 "X-Poedit-Basepath: ../../../ckanext\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+
+#: odm_library/i18n/metadata_fields.php:3
+msgid "Document type"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:4
+msgid "Advocacy and promotional materials"
+msgstr "Tài liệu vận động chính sách và quảng bá"
+
+#: odm_library/i18n/metadata_fields.php:5
+msgid "Analysis, discussion papers, and blogs"
+msgstr "Các phân tích, thảo luận và blog"
+
+#: odm_library/i18n/metadata_fields.php:6
+msgid "Books and book chapters"
+msgstr "Sách và các chương"
+
+#: odm_library/i18n/metadata_fields.php:7
+msgid "Case studies"
+msgstr "Tình huống điển hình"
+
+#: odm_library/i18n/metadata_fields.php:8
+msgid "Issue and policy briefs"
+msgstr "Vấn đề và tóm lược chính sách"
+
+#: odm_library/i18n/metadata_fields.php:9
+msgid "Profiles - People"
+msgstr "Thông tin - Con người"
+
+#: odm_library/i18n/metadata_fields.php:10
+msgid "Profiles - Organizations  and projects"
+msgstr "Thông tin - Tổ chức và các dự án"
+
+#: odm_library/i18n/metadata_fields.php:11
+msgid "Profiles - Geographical areas and sites"
+msgstr "Thông tin - Vùng địa lý và các địa danh"
+
+#: odm_library/i18n/metadata_fields.php:12
+msgid "Conference/workshop proceedings and presentations"
+msgstr "Kỷ yếu và bài trình bày các hội nghị/hội thảo "
+
+#: odm_library/i18n/metadata_fields.php:13
+msgid ""
+"Reports, journal articles, and research papers (including theses and "
+"dissertations)"
+msgstr "Các báo cáo, bài đăng tạp chí, bài viết nghiên cứu (bao gồm các luận án, luận văn)"
+
+#: odm_library/i18n/metadata_fields.php:14
+msgid "Company profiles"
+msgstr "Thông tin về các công ty"
+
+#: odm_library/i18n/metadata_fields.php:15
+msgid "Language of document"
+msgstr "Loại ngôn ngữ của tài liệu"
+
+#: odm_library/i18n/metadata_fields.php:16
+msgid "Burmese"
+msgstr "Tiếng Mi-an-ma"
+
+#: odm_library/i18n/metadata_fields.php:17
+msgid "English"
+msgstr "Tiếng Anh"
+
+#: odm_library/i18n/metadata_fields.php:18
+msgid "Khmer"
+msgstr "Tiếng Khơ -me"
+
+#: odm_library/i18n/metadata_fields.php:19
+msgid "Lao"
+msgstr "Tiếng Lào"
+
+#: odm_library/i18n/metadata_fields.php:20
+msgid "Thai"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:21
+msgid "Vietnamese"
+msgstr "Tiếng Việt"
+
+#: odm_library/i18n/metadata_fields.php:22
+msgid "Chinese"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:23
+msgid "French"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:24
+msgid "German"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:25
+msgid "Japanese"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:26
+msgid "Korean"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:27
+msgid "Other"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:28
+msgid "URL"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:29
+msgid "Formal full title"
+msgstr "Tiêu đề đầy đủ chính thức"
+
+#: odm_library/i18n/metadata_fields.php:30
+msgid "Short title (alternative/varying form of title)"
+msgstr "Tên rút gọn (tên thay thế/dạng viết khác)"
+
+#: odm_library/i18n/metadata_fields.php:31
+msgid "Topics"
+msgstr "Chủ đề"
+
+#: odm_library/i18n/metadata_fields.php:32
+msgid "Short summary (contents)"
+msgstr "Tóm tắt nội dung"
+
+#: odm_library/i18n/metadata_fields.php:33
+msgid "Geographic area (spatial range)"
+msgstr "Vùng địa lý (phạm vi không gian)"
+
+#: odm_library/i18n/metadata_fields.php:34
+msgid "Global"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:35
+msgid "ASEAN"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:36
+msgid "Greater Mekong Subregion (GMS)"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:37
+msgid "Lower Mekong Basin"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:38
+msgid "Lower Mekong countries"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:39
+msgid "Cambodia"
+msgstr "Cam-pu-chia"
+
+#: odm_library/i18n/metadata_fields.php:40
+msgid "Vietnam"
+msgstr "Việt Nam"
+
+#: odm_library/i18n/metadata_fields.php:41
+msgid "Laos"
+msgstr "Lào"
+
+#: odm_library/i18n/metadata_fields.php:42
+msgid "Thailand"
+msgstr "Thái Lan"
+
+#: odm_library/i18n/metadata_fields.php:43
+msgid "Myanmar"
+msgstr "Mi-an-ma"
+
+#: odm_library/i18n/metadata_fields.php:44
+msgid "Copyright"
+msgstr "Bản quyền"
+
+#: odm_library/i18n/metadata_fields.php:45
+msgid "Access and use constraints"
+msgstr "Khó khăn tiếp cận và khai thác dữ liệu"
+
+#: odm_library/i18n/metadata_fields.php:46
+msgid "Version / Edition"
+msgstr "Phiên bản/Lần xuất bản"
+
+#: odm_library/i18n/metadata_fields.php:47
+msgid "Organization"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:48
+msgid "Date uploaded"
+msgstr "Ngày tải dữ liệu lên"
+
+#: odm_library/i18n/metadata_fields.php:49
+msgid "License"
+msgstr "Giấy phép"
+
+#: odm_library/i18n/metadata_fields.php:50
+msgid "Contact"
+msgstr "Liên hệ"
+
+#: odm_library/i18n/metadata_fields.php:51
+msgid "Author (individual)"
+msgstr "Tác giả (cá nhân)"
+
+#: odm_library/i18n/metadata_fields.php:52
+msgid "Author (corporate)"
+msgstr "Tác giả (tổ chức)"
+
+#: odm_library/i18n/metadata_fields.php:53
+msgid "Co-author (individual)"
+msgstr "Đồng tác giả (cá nhân)"
+
+#: odm_library/i18n/metadata_fields.php:54
+msgid "Co-author (coorporate)"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:55
+msgid "ISBN number"
+msgstr "Số ISBN"
+
+#: odm_library/i18n/metadata_fields.php:56
+msgid "ISSN number"
+msgstr "Số ISSN"
+
+#: odm_library/i18n/metadata_fields.php:57
+msgid "Publication place"
+msgstr "Nơi xuất bản"
+
+#: odm_library/i18n/metadata_fields.php:58
+msgid "Publisher"
+msgstr "Nhà xuất bản"
+
+#: odm_library/i18n/metadata_fields.php:59
+msgid "Publication date"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:60
+msgid "Pagination"
+msgstr "Đánh số trang"
+
+#: odm_library/i18n/metadata_fields.php:61
+msgid "General note"
+msgstr "Lưu ý chung"
+
+#: odm_library/i18n/metadata_fields.php:62
+msgid "Legacy reference document"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:63
+msgid "Maintainer"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:64
+msgid "Maintainer email"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:65
+msgid "Name"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:66
+msgid "Format"
+msgstr "Định dạng"
 
 #: odm_library/lib/odm_library_helper.py:27
 msgid ""
