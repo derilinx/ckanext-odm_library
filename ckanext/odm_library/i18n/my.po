@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ODM ckanext-odm_library\n"
-"POT-Creation-Date: 2016-05-17 14:37+0200\n"
-"PO-Revision-Date: 2016-05-17 12:37+0000\n"
+"POT-Creation-Date: 2016-05-17 15:21+0200\n"
+"PO-Revision-Date: 2016-05-17 13:22+0000\n"
 "Last-Translator: Alex Corbi <a.corbi@gmail.com>\n"
 "Language-Team: Burmese (http://www.transifex.com/open-development-mekong/odm-ckanext-odm_library/language/my/)\n"
 "MIME-Version: 1.0\n"
@@ -17,6 +17,264 @@ msgstr ""
 "X-Poedit-Basepath: ../../../ckanext\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+
+#: odm_library/i18n/metadata_fields.php:3
+msgid "Document type"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:4
+msgid "Advocacy and promotional materials"
+msgstr "စည်းရုံးလှုံ့ဆော်ခြင်းနှင့် မြှင့်တင်အသုံးပြုနိုင်ရန်အတွက် ပစ္စည်းများ"
+
+#: odm_library/i18n/metadata_fields.php:5
+msgid "Analysis, discussion papers, and blogs"
+msgstr "လေ့လာသုံးသပ်ချက်၊ ဆွေးနွေးချက်များ၊ နှင့် ဘလော့များ"
+
+#: odm_library/i18n/metadata_fields.php:6
+msgid "Books and book chapters"
+msgstr "စာအုပ်များ နှင့် စာအုပ်ရှိအခန်းများ"
+
+#: odm_library/i18n/metadata_fields.php:7
+msgid "Case studies"
+msgstr "ဖြစ်ရပ်အပေါ်လေ့လာချက်များ"
+
+#: odm_library/i18n/metadata_fields.php:8
+msgid "Issue and policy briefs"
+msgstr "အကြောင်းကိစ္စ နှင့် မူဝါဒ အကြမ်းများ"
+
+#: odm_library/i18n/metadata_fields.php:9
+msgid "Profiles - People"
+msgstr "လူပုဂ္ဂိုလ်များ၏ အချက်အလက်မှတ်တမ်း"
+
+#: odm_library/i18n/metadata_fields.php:10
+msgid "Profiles - Organizations  and projects"
+msgstr "အဖွဲ့အစည်းများနှင့် စီမံကိန်းများ၏ အချက်အလက်မှတ်တမ်း"
+
+#: odm_library/i18n/metadata_fields.php:11
+msgid "Profiles - Geographical areas and sites"
+msgstr "ပထဝီ ဧရိယာနှင့် အကောင်အထည်ဖော်နေရာများ၏ အချက်အလက်မှတ်တမ်း"
+
+#: odm_library/i18n/metadata_fields.php:12
+msgid "Conference/workshop proceedings and presentations"
+msgstr "ဆွေးနွေးပွဲများ ဆက်လက်အကောင်အထည်ဖေါ်ခြင်း နှင့် တင်ဆက်မှုများ"
+
+#: odm_library/i18n/metadata_fields.php:13
+msgid ""
+"Reports, journal articles, and research papers (including theses and "
+"dissertations)"
+msgstr "အစီရင်ခံစာများ၊ ဂျာနယ်ဆောင်းပါးများ၊ နှင့် သုတေသနစာတမ်းများ (အကြောင်းအရာတစ်ခုပေါ်လေ့လာချက်များ နှင့် သုတေသနမှတွေ့ရှိချက်များ အပါအဝင်)"
+
+#: odm_library/i18n/metadata_fields.php:14
+msgid "Company profiles"
+msgstr "ကုမ္မဏီ၏ အချက်အလက်မှတ်တမ်း"
+
+#: odm_library/i18n/metadata_fields.php:15
+msgid "Language of document"
+msgstr "စာရွက်စာတမ်း၏ ဘာသာစကား"
+
+#: odm_library/i18n/metadata_fields.php:16
+msgid "Burmese"
+msgstr "ဗမာဘာသာစကား"
+
+#: odm_library/i18n/metadata_fields.php:17
+msgid "English"
+msgstr "အင်္ဂလိပ်ဘာသာစကား"
+
+#: odm_library/i18n/metadata_fields.php:18
+msgid "Khmer"
+msgstr "ခမာဘာသာစကား"
+
+#: odm_library/i18n/metadata_fields.php:19
+msgid "Lao"
+msgstr "လာအိုဘာသာစကား"
+
+#: odm_library/i18n/metadata_fields.php:20
+msgid "Thai"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:21
+msgid "Vietnamese"
+msgstr "ဗီယက်နမ်ဘာသာစကား"
+
+#: odm_library/i18n/metadata_fields.php:22
+msgid "Chinese"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:23
+msgid "French"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:24
+msgid "German"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:25
+msgid "Japanese"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:26
+msgid "Korean"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:27
+msgid "Other"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:28
+msgid "URL"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:29
+msgid "Formal full title"
+msgstr "ခေါင်းစဉ်အပြည့်အစုံ"
+
+#: odm_library/i18n/metadata_fields.php:30
+msgid "Short title (alternative/varying form of title)"
+msgstr "ခေါင်းစဉ်အတို (မူရင်းခေါင်းစဉ်နှင့်မတူသောခေါင်းစဉ်)"
+
+#: odm_library/i18n/metadata_fields.php:31
+msgid "Topics"
+msgstr "ခေါင်းစဉ်များ"
+
+#: odm_library/i18n/metadata_fields.php:32
+msgid "Short summary (contents)"
+msgstr "အနှစ်ချုပ် (အကြောင်းအရာ)"
+
+#: odm_library/i18n/metadata_fields.php:33
+msgid "Geographic area (spatial range)"
+msgstr "ပထဝီဧရိယာ (spatial range)"
+
+#: odm_library/i18n/metadata_fields.php:34
+msgid "Global"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:35
+msgid "ASEAN"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:36
+msgid "Greater Mekong Subregion (GMS)"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:37
+msgid "Lower Mekong Basin"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:38
+msgid "Lower Mekong countries"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:39
+msgid "Cambodia"
+msgstr "ကမ္ဘောဒီးယား"
+
+#: odm_library/i18n/metadata_fields.php:40
+msgid "Vietnam"
+msgstr "ဗီယက်နမ်"
+
+#: odm_library/i18n/metadata_fields.php:41
+msgid "Laos"
+msgstr "လာအို "
+
+#: odm_library/i18n/metadata_fields.php:42
+msgid "Thailand"
+msgstr "ထိုင်း"
+
+#: odm_library/i18n/metadata_fields.php:43
+msgid "Myanmar"
+msgstr "မြန်မာ"
+
+#: odm_library/i18n/metadata_fields.php:44
+msgid "Copyright"
+msgstr "မူပိုင်ခွင့်"
+
+#: odm_library/i18n/metadata_fields.php:45
+msgid "Access and use constraints"
+msgstr "ရယူခြင်းနှင့် အကန့်အသတ်များအသုံးပြုခြင်း"
+
+#: odm_library/i18n/metadata_fields.php:46
+msgid "Version / Edition"
+msgstr "ဗားရှင်း/ ပြင်ဆင်ချက်"
+
+#: odm_library/i18n/metadata_fields.php:47
+msgid "Organization"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:48
+msgid "Date uploaded"
+msgstr "တင်သည့်ရက်စွဲ"
+
+#: odm_library/i18n/metadata_fields.php:49
+msgid "License"
+msgstr "လိုင်စင်"
+
+#: odm_library/i18n/metadata_fields.php:50
+msgid "Contact"
+msgstr "ဆက်သွယ်ရန်"
+
+#: odm_library/i18n/metadata_fields.php:51
+msgid "Author (individual)"
+msgstr "ရေးသာသူ (တစ်သီးပုဂ္ဂလ)"
+
+#: odm_library/i18n/metadata_fields.php:52
+msgid "Author (corporate)"
+msgstr "ရေးသားသူ (ပူပေါင်း)"
+
+#: odm_library/i18n/metadata_fields.php:53
+msgid "Co-author (individual)"
+msgstr "ပူးပေါင်းရေးသားသူ (တစ်ဦးချင်းစီ)"
+
+#: odm_library/i18n/metadata_fields.php:54
+msgid "Co-author (coorporate)"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:55
+msgid "ISBN number"
+msgstr "ISBN နံပါတ်"
+
+#: odm_library/i18n/metadata_fields.php:56
+msgid "ISSN number"
+msgstr "ISSN နံပါတ်"
+
+#: odm_library/i18n/metadata_fields.php:57
+msgid "Publication place"
+msgstr "ထုတ်ဝေသည့်ရေရာ "
+
+#: odm_library/i18n/metadata_fields.php:58
+msgid "Publisher"
+msgstr "ထုတ်ဝေသူ"
+
+#: odm_library/i18n/metadata_fields.php:59
+msgid "Publication date"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:60
+msgid "Pagination"
+msgstr "စာမျက်နှာခွဲ"
+
+#: odm_library/i18n/metadata_fields.php:61
+msgid "General note"
+msgstr "အထွေထွေ မှတ်ချက်"
+
+#: odm_library/i18n/metadata_fields.php:62
+msgid "Legacy reference document"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:63
+msgid "Maintainer"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:64
+msgid "Maintainer email"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:65
+msgid "Name"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:66
+msgid "Format"
+msgstr "ပုံစံ"
 
 #: odm_library/lib/odm_library_helper.py:27
 msgid ""

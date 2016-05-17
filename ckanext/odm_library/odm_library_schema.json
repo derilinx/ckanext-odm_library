@@ -97,8 +97,9 @@
 		"label": {
 			"en": "Formal full title",
 			"th": "Formal full title",
-			"km": "Formal full title",
-			"vi": "Formal full title"
+			"km": "ចំណងជើងជាផ្លូវការពេញលេញ",
+			"vi": "Tiêu đề đầy đủ chính thức",
+			"my": "ခေါင်းစဉ်အပြည့်အစုံ"
 		},
 		"form_languages": ["en", "th", "km", "vi"],
     "form_attrs": {
@@ -111,8 +112,9 @@
     "label": {
 			"en": "Short title (alternative/varying form of title)",
 			"th": "Short title (alternative/varying form of title)",
-			"km": "Short title (alternative/varying form of title)",
-			"vi": "Short title (alternative/varying form of title)"
+			"km": "ចំណងជើងខ្លី (ចំណងជើងផ្សេងទៀត)",
+			"vi": "Tên rút gọn (tên thay thế/dạng viết khác)",
+			"my": "ခေါင်းစဉ်အတို (မူရင်းခေါင်းစဉ်နှင့်မတူသောခေါင်းစဉ်)"
 		},
 		"form_languages": ["en", "th", "km", "vi"],
 		"form_snippet": "text.html",
@@ -129,8 +131,9 @@
 		"label": {
 			"en": "Short summary (contents)",
 			"th": "Short summary (contents)",
-			"km": "Short summary (contents)",
-			"vi": "Short summary (contents)"
+			"km": "សេចក្ដីសង្ខេបខ្លី (ខ្លឹមសារ)",
+			"vi": "Tóm tắt nội dung",
+			"my": "အနှစ်ချုပ် (အကြောင်းအရာ)"
 		},
 		"form_languages": ["en", "th", "km", "vi"],
 		"form_placeholder": "Abstract or summary of book or articlee"
@@ -184,7 +187,8 @@
 			"en": "Access and use constraints",
 			"th": "การเข้าถึงและข้อจำกัด",
 			"km": "កំហិតនៃការចូល និងប្រើប្រាស់",
-			"vi": "Hạn chế truy cập và sử dụng"
+			"vi": "Hạn chế truy cập và sử dụng",
+			"my": "ရယူခြင်းနှင့် အကန့်အသတ်များအသုံးပြုခြင်း"
 		},
 		"form_languages": ["en", "th", "km", "vi"],
 		"form_placeholder": "A few sentences describing legal considerations for people who access the website and/or use its contents."
@@ -216,7 +220,8 @@
 			"en": "Contact",
 			"th": "ข้อมูลติดต่อ",
 			"km": "ទំនាក់ទំនង",
-			"vi": "Liên hệ"
+			"vi": "Liên hệ",
+			"my": "ဆက်သွယ်ရန်"
 		},
 		"form_languages": ["en", "th", "km", "vi"],
 		"form_placeholder": "Contact information for the individual or organization that is responsible for or most knowledgeable about the dataset. This could be the author of a report, the contact information for the relevant department of an organization that produced a report, or the data analyst, mapper or researcher that produced a dataset or report."
@@ -256,8 +261,9 @@
     "label": {
 			"en": "Publication place",
 			"th": "Publication place",
-			"km": "Publication place",
-			"vi": "Publication place"
+			"km": "កន្លែងបោះពុម្ភផ្សាយ",
+			"vi": "Nơi xuất bản",
+			"my": "ထုတ်ဝေသည့်ရေရာ "
 		},
 		"form_languages": ["en", "th", "km", "vi"],
 		"form_placeholder": "Place of publisher"
@@ -268,7 +274,8 @@
 			"en": "Publisher",
 			"th": "ผู้พิมพ์",
 			"km": "អ្នកបោះពុម្ពផ្សាយ",
-			"vi": "Nhà xuất bản"
+			"vi": "Nhà xuất bản",
+			"my": "ထုတ်ဝေသူ"
 		},
 		"form_languages": ["en", "th", "km", "vi"],
 		"form_placeholder": "Name of publishing organization"
@@ -284,7 +291,8 @@
 			"en": "Pagination",
 			"th": "การให้เลขหน้า",
 			"km": "ការបង់លេខ",
-			"vi": "Đánh số trang"
+			"vi": "Đánh số trang",
+			"my": "စာမျက်နှာခွဲ"
 		},
 		"form_languages": ["en", "th", "km", "vi"],
 		"form_placeholder": "Physical description (pagination)"
@@ -295,7 +303,8 @@
 			"en": "General note",
 			"th": "หมายเหตุทั่วไป",
 			"km": "កំណត់សំគាល់ទូទៅង",
-			"vi": "Chú ý"
+			"vi": "Chú ý",
+			"my": "အထွေထွေ မှတ်ချက်"
 		},
 		"form_languages": ["en", "th", "km", "vi"],
 		"form_placeholder": "General note."

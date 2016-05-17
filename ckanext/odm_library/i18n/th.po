@@ -4,8 +4,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ODM ckanext-odm_library\n"
-"POT-Creation-Date: 2016-05-17 14:37+0200\n"
-"PO-Revision-Date: 2016-05-17 12:37+0000\n"
+"POT-Creation-Date: 2016-05-17 15:21+0200\n"
+"PO-Revision-Date: 2016-05-17 13:22+0000\n"
 "Last-Translator: Alex Corbi <a.corbi@gmail.com>\n"
 "Language-Team: Thai (http://www.transifex.com/open-development-mekong/odm-ckanext-odm_library/language/th/)\n"
 "MIME-Version: 1.0\n"
@@ -17,6 +17,264 @@ msgstr ""
 "X-Poedit-Basepath: ../../../ckanext\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+
+#: odm_library/i18n/metadata_fields.php:3
+msgid "Document type"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:4
+msgid "Advocacy and promotional materials"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:5
+msgid "Analysis, discussion papers, and blogs"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:6
+msgid "Books and book chapters"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:7
+msgid "Case studies"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:8
+msgid "Issue and policy briefs"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:9
+msgid "Profiles - People"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:10
+msgid "Profiles - Organizations  and projects"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:11
+msgid "Profiles - Geographical areas and sites"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:12
+msgid "Conference/workshop proceedings and presentations"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:13
+msgid ""
+"Reports, journal articles, and research papers (including theses and "
+"dissertations)"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:14
+msgid "Company profiles"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:15
+msgid "Language of document"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:16
+msgid "Burmese"
+msgstr "ภาษาพม่า"
+
+#: odm_library/i18n/metadata_fields.php:17
+msgid "English"
+msgstr "ภาษาอังกฤษ"
+
+#: odm_library/i18n/metadata_fields.php:18
+msgid "Khmer"
+msgstr "ภาษาเขมร"
+
+#: odm_library/i18n/metadata_fields.php:19
+msgid "Lao"
+msgstr "ภาษาลาว"
+
+#: odm_library/i18n/metadata_fields.php:20
+msgid "Thai"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:21
+msgid "Vietnamese"
+msgstr "ภาษาเวียตนาม"
+
+#: odm_library/i18n/metadata_fields.php:22
+msgid "Chinese"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:23
+msgid "French"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:24
+msgid "German"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:25
+msgid "Japanese"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:26
+msgid "Korean"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:27
+msgid "Other"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:28
+msgid "URL"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:29
+msgid "Formal full title"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:30
+msgid "Short title (alternative/varying form of title)"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:31
+msgid "Topics"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:32
+msgid "Short summary (contents)"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:33
+msgid "Geographic area (spatial range)"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:34
+msgid "Global"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:35
+msgid "ASEAN"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:36
+msgid "Greater Mekong Subregion (GMS)"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:37
+msgid "Lower Mekong Basin"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:38
+msgid "Lower Mekong countries"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:39
+msgid "Cambodia"
+msgstr "กัมพูชา"
+
+#: odm_library/i18n/metadata_fields.php:40
+msgid "Vietnam"
+msgstr "เวียดนาม"
+
+#: odm_library/i18n/metadata_fields.php:41
+msgid "Laos"
+msgstr "ลาว"
+
+#: odm_library/i18n/metadata_fields.php:42
+msgid "Thailand"
+msgstr "ไทย"
+
+#: odm_library/i18n/metadata_fields.php:43
+msgid "Myanmar"
+msgstr "พม่า"
+
+#: odm_library/i18n/metadata_fields.php:44
+msgid "Copyright"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:45
+msgid "Access and use constraints"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:46
+msgid "Version / Edition"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:47
+msgid "Organization"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:48
+msgid "Date uploaded"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:49
+msgid "License"
+msgstr "สัญญาอนุญาต"
+
+#: odm_library/i18n/metadata_fields.php:50
+msgid "Contact"
+msgstr "ข้อมูลติดต่อ"
+
+#: odm_library/i18n/metadata_fields.php:51
+msgid "Author (individual)"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:52
+msgid "Author (corporate)"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:53
+msgid "Co-author (individual)"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:54
+msgid "Co-author (coorporate)"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:55
+msgid "ISBN number"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:56
+msgid "ISSN number"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:57
+msgid "Publication place"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:58
+msgid "Publisher"
+msgstr "ผู้พิมพ์"
+
+#: odm_library/i18n/metadata_fields.php:59
+msgid "Publication date"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:60
+msgid "Pagination"
+msgstr "การให้เลขหน้า"
+
+#: odm_library/i18n/metadata_fields.php:61
+msgid "General note"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:62
+msgid "Legacy reference document"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:63
+msgid "Maintainer"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:64
+msgid "Maintainer email"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:65
+msgid "Name"
+msgstr ""
+
+#: odm_library/i18n/metadata_fields.php:66
+msgid "Format"
+msgstr "รูปแบบ"
 
 #: odm_library/lib/odm_library_helper.py:27
 msgid ""
