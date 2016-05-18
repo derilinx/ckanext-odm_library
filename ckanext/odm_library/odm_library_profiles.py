@@ -8,6 +8,10 @@ from geomet import wkt, InvalidGeoJSONException
 from ckan.plugins import toolkit
 from ckanext.dcat.utils import resource_uri, publisher_uri_from_dataset_dict
 from ckanext.dcat.profiles import RDFProfile
+import sys
+import os
+sys.path.append(os.path.join(os.path.dirname(__file__), "lib"))
+import odm_rdf_helper
 import logging
 
 log = logging.getLogger(__name__)
@@ -35,26 +39,26 @@ GN = Namespace('http://www.geonames.org/ontology#')
 SKOS = Namespace('https://www.w3.org/2009/08/skos-reference/skos.html#')
 
 namespaces = {
-    'agls': AGLS,
-    'bibo': BIBO,
-    'dbpedia': DBPEDIA,
-    'gc': GC,
-    'dct': DCT,
-    'dcat': DCAT,
-    'foaf': FOAF,
-    'mrel': MREL,
-    'schema': SCHEMA,
-    'cro': CRO,
-    'doap': DOAP,
-    'ebucore': EBUCORE,
-    'dqm': DQM,
-    'dq': DQ,
-    'omn': OMN,
-    'opus': OPUS,
-    'pproc': PPROC,
-    'md': MD,
-    'gn': GN,
-    'skos': SKOS
+  'agls': AGLS,
+  'bibo': BIBO,
+  'dbpedia': DBPEDIA,
+  'gc': GC,
+  'dct': DCT,
+  'dcat': DCAT,
+  'foaf': FOAF,
+  'mrel': MREL,
+  'schema': SCHEMA,
+  'cro': CRO,
+  'doap': DOAP,
+  'ebucore': EBUCORE,
+  'dqm': DQM,
+  'dq': DQ,
+  'omn': OMN,
+  'opus': OPUS,
+  'pproc': PPROC,
+  'md': MD,
+  'gn': GN,
+  'skos': SKOS
 }
 
 
@@ -75,6 +79,9 @@ class ODMDCATBasicProfileLibrary(RDFProfile):
 
   def graph_from_dataset(self, dataset_dict, dataset_ref):
 
+    if dataset_dict['type'] != "library_record":
+      return
+
     log.debug("ODMDCATBasicProfileLibrary graph_from_dataset")
 
     g = self.g
@@ -82,36 +89,39 @@ class ODMDCATBasicProfileLibrary(RDFProfile):
     for prefix, namespace in namespaces.iteritems():
       g.bind(prefix, namespace)
 
-    g.add((dataset_ref, DCT.identifier, Literal(dataset_dict.get('id', None))))
+    g.add((dataset_ref, DCT.identifier, Literal(dataset_dict.get('id'))))
     g.add((dataset_ref, DCT.type, Literal(dataset_dict.get('type', 'dataset'))))
-    g.add((dataset_ref, DCAT.landingPage, Literal(dataset_dict.get('url', None))))
+    g.add((dataset_ref, DCAT.landingPage, Literal(dataset_dict.get('url'))))
 
     # Basic fields
-    items = [
-        ('document_type', AGLS.documentType, None),
-        ('title_translated', DCT.title, None),
-        ('marc21_246', GC.shortTitle, None),
-        ('notes_translated', DCT.description, None),
-        ('license', DCT.license, None),
-        ('copyright', CRO.copyright, None),
-        ('owner_org', FOAF.organization, None),
-        ('version', DOAP.version, ['dcat_version']),
-        ('contact', EBUCORE.contact, None),
-        ('odm_access_and_use_constraints', MD.useconstraints, None),
-        ('marc21_100', OPUS.author, None),
-        ('marc21_110', OPUS.author, None),
-        ('marc21_700', OPUS.coauthor, None),
-        ('marc21_710', OPUS.coauthor, None),
-        ('marc21_020', OPUS.isbn, None),
-        ('marc21_022', DBPEDIA.issn, None),
-        ('marc21_260a', MREL.pup, None),
-        ('marc21_260b', DCT.publisher, None),
-        ('marc21_300', BIBO.numPages, None),
-        ('marc21_500', SKOS.note, None),
-        ('odm_reference_document', PPROC.documentReference, None)
+    raw_triples = [
+      (dataset_ref, AGLS.documentType, dataset_dict.get('document_type')),
+      (dataset_ref, DCT.title, dataset_dict.get('title_translated')),
+      (dataset_ref, GC.shortTitle, dataset_dict.get('marc21_246')),
+      (dataset_ref, DCT.description, dataset_dict.get('notes_translated')),
+      (dataset_ref, DCT.license, dataset_dict.get('license')),
+      (dataset_ref, CRO.copyright, dataset_dict.get('copyright')),
+      (dataset_ref, FOAF.organization, dataset_dict.get('owner_org')),
+      (dataset_ref, DOAP.version, dataset_dict.get('version')),
+      (dataset_ref, EBUCORE.contact, dataset_dict.get('contact')),
+      (dataset_ref, MD.useconstraints, dataset_dict.get('odm_access_and_use_constraints')),
+      (dataset_ref, OPUS.author, dataset_dict.get('marc21_100')),
+      (dataset_ref, OPUS.author, dataset_dict.get('marc21_110')),
+      (dataset_ref, OPUS.coauthor, dataset_dict.get('marc21_700')),
+      (dataset_ref, OPUS.coauthor, dataset_dict.get('marc21_710')),
+      (dataset_ref, OPUS.isbn, dataset_dict.get('marc21_020')),
+      (dataset_ref, DBPEDIA.issn, dataset_dict.get('marc21_022')),
+      (dataset_ref, MREL.pup, dataset_dict.get('marc21_260a')),
+      (dataset_ref, DCT.publisher, dataset_dict.get('marc21_260b')),
+      (dataset_ref, BIBO.numPages, dataset_dict.get('marc21_300')),
+      (dataset_ref, SKOS.note, dataset_dict.get('marc21_500')),
+      (dataset_ref, PPROC.documentReference, dataset_dict.get('odm_reference_document'))
     ]
-    self._add_triples_from_dict(dataset_dict, dataset_ref, items)
 
+    for raw_triple in raw_triples:
+      triples = odm_rdf_helper.split_multilingual_object_into_triples(raw_triple)
+      for triple in triples:
+        g.add(triple)
 
     #  Lists
     items = [
@@ -170,32 +180,5 @@ class ODMDCATBasicProfileLibrary(RDFProfile):
 
   def graph_from_catalog(self, catalog_dict, catalog_ref):
 
-    log.debug("ODMDCATBasicProfileLibrary graph_from_catalog")
-
-    g = self.g
-
-    for prefix, namespace in namespaces.iteritems():
-      g.bind(prefix, namespace)
-
-    g.add((catalog_ref, RDF.type, DCAT.Catalog))
-
-    # Basic fields
-    items = [
-        ('title', DCT.title, config.get('ckan.site_title')),
-        ('description', DCT.description, config.get('ckan.site_description')),
-        ('homepage', FOAF.homepage, config.get('ckan.site_url')),
-        ('language', DCT.language, config.get('ckan.locale_default', 'en')),
-    ]
-    for item in items:
-      key, predicate, fallback = item
-      if catalog_dict:
-        value = catalog_dict.get(key, fallback)
-      else:
-        value = fallback
-      if value:
-        g.add((catalog_ref, predicate, Literal(value)))
-
-    # Dates
-    modified = self._last_catalog_modification()
-    if modified:
-      self._add_date_triple(catalog_ref, DCT.modified, modified)
+    # Code maintained on ckanext-odm_dataset
+    pass
