@@ -47,7 +47,7 @@
 		"label": "Language of document",
 		"required": "true",
 		"form_placeholder": "Language(s) of the dataset, including resources within dataset.",
-		"preset": "multiple_select",
+		"preset": "odm_language",
 		"select_size": 4,
 		"choices": [{
 			"value": "my",
@@ -87,13 +87,6 @@
 			"label": "Other"
 		}]
 	}, {
-		"field_name": "title",
-		"label": "title",
-		"preset": "text_hidden",
-    "form_attrs": {
-      "data-module": "slug-preview-target"
-    }
-	},{
 		"field_name": "name",
 		"label": "URL",
 		"preset": "dataset_slug",
@@ -111,8 +104,15 @@
 		"form_languages": ["en", "th", "km", "vi"],
 		"form_placeholder": "Main title"
 	}, {
+		"field_name": "title",
+		"label": "title",
+		"preset": "text_hidden",
+    "form_attrs": {
+      "data-module": "slug-preview-target"
+    }
+	}, {
 		"field_name": "marc21_246",
-    "preset": "fluent_text_single",
+		"label": "Short title (alternative/varying form of title)",
     "label": {
 			"en": "Short title (alternative/varying form of title)",
 			"th": "Short title (alternative/varying form of title)",
@@ -121,6 +121,7 @@
 			"my": "ခေါင်းစဉ်အတို (မူရင်းခေါင်းစဉ်နှင့်မတူသောခေါင်းစဉ်)"
 		},
 		"form_languages": ["en", "th", "km", "vi"],
+		"form_snippet": "text.html",
 		"form_placeholder": "Parallel title or translation."
 	}, {
 		"field_name": "taxonomy",
@@ -144,7 +145,7 @@
 		"field_name": "odm_spatial_range",
 		"label": "Geographic area (spatial range)",
 		"form_placeholder": "The geographic area that the dataset is relevant to (i.e. Cambodia, Laos).",
-		"preset": "multiple_select",
+		"preset": "odm_spatial_range",
 		"required": "true",
 		"select_size": 4,
 		"choices": [{
@@ -209,8 +210,12 @@
 		"field_name": "odm_date_uploaded",
 		"label": "Date uploaded",
 		"form_placeholder": "Date a new version or update of the dataset was uploaded.",
-		"required": "true",
-		"preset": "odm_date"
+		"preset": "odm_date_uploaded"
+	}, {
+		"field_name": "odm_date_modified",
+		"label": "Date modified",
+		"form_placeholder": "Date a new version or update of the dataset was uploaded.",
+		"preset": "odm_date_modified"
 	}, {
 		"field_name": "license_id",
 		"label": "License",
@@ -323,6 +328,14 @@
 		"field_name": "maintainer_email",
 		"label": "Maintainer email",
     "preset": "auto_maintainer_email"
+	}, {
+		"field_name": "author",
+		"label": "Author",
+    "preset": "auto_author"
+	}, {
+		"field_name": "author_email",
+		"label": "Author email",
+    "preset": "auto_author_email"
 	}],
   "resource_fields": [{
 		"field_name": "url",
