@@ -87,6 +87,13 @@
 			"label": "Other"
 		}]
 	}, {
+		"field_name": "title",
+		"label": "title",
+		"preset": "text_hidden",
+    "form_attrs": {
+      "data-module": "slug-preview-target"
+    }
+	},{
 		"field_name": "name",
 		"label": "URL",
 		"preset": "dataset_slug",
@@ -102,13 +109,10 @@
 			"my": "ခေါင်းစဉ်အပြည့်အစုံ"
 		},
 		"form_languages": ["en", "th", "km", "vi"],
-    "form_attrs": {
-      "data-module": "slug-preview-target"
-    },
 		"form_placeholder": "Main title"
 	}, {
 		"field_name": "marc21_246",
-		"label": "Short title (alternative/varying form of title)",
+    "preset": "fluent_text_single",
     "label": {
 			"en": "Short title (alternative/varying form of title)",
 			"th": "Short title (alternative/varying form of title)",
@@ -117,7 +121,6 @@
 			"my": "ခေါင်းစဉ်အတို (မူရင်းခေါင်းစဉ်နှင့်မတူသောခေါင်းစဉ်)"
 		},
 		"form_languages": ["en", "th", "km", "vi"],
-		"form_snippet": "text.html",
 		"form_placeholder": "Parallel title or translation."
 	}, {
 		"field_name": "taxonomy",
