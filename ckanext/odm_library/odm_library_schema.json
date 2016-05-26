@@ -90,7 +90,8 @@
 		"field_name": "name",
 		"label": "URL",
 		"preset": "dataset_slug",
-		"form_placeholder": "eg. my-dataset"
+		"form_placeholder": "eg. my-dataset",
+    "validators": "if_empty_same_as(title) odm_dataset_urlencode"
 	}, {
 		"field_name": "title_translated",
 		"preset": "fluent_core_title_translated_single",
