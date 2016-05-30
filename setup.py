@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import sys, os
 
-version = '1.8.4'
+version = '1.8.5'
 
 setup(
     name='ckanext-odm_library',
@@ -25,8 +25,5 @@ setup(
     entry_points='''
         [ckan.plugins]
         odm_library=ckanext.odm_library.plugin:OdmLibraryPlugin
-
-        [ckan.rdf.profiles]
-        odm_dcat_library=ckanext.odm_library.odm_library_profiles:ODMDCATBasicProfileLibrary
     ''',
 )
