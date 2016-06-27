@@ -41,6 +41,9 @@
 		}, {
 			"value": "company_profiles",
 			"label": "Company profiles"
+		}, {
+			"value": "archived_web_content",
+			"label": "Archived web content"
 		}]
 	},{
 		"field_name": "odm_language",
