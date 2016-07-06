@@ -90,12 +90,6 @@
 			"label": "Other"
 		}]
 	}, {
-		"field_name": "name",
-		"label": "URL",
-		"preset": "dataset_slug",
-		"form_placeholder": "eg. my-dataset",
-    "validators": "if_empty_same_as(title) odm_dataset_urlencode"
-	}, {
 		"field_name": "title_translated",
 		"preset": "fluent_core_title_translated_single",
 		"label": {
@@ -106,14 +100,24 @@
 			"my": "ခေါင်းစဉ်အပြည့်အစုံ"
 		},
 		"form_languages": ["en", "th", "km", "vi"],
-		"form_placeholder": "Main title"
+		"form_placeholder": "Main title",
+		"form_attrs": {
+      "data-module": "slug-preview-target"
+    }
 	}, {
 		"field_name": "title",
 		"label": "title",
 		"preset": "text_hidden",
     "form_attrs": {
       "data-module": "slug-preview-target"
-    }
+    },
+		"validators": "if_empty_same_as(name)"
+	}, {
+		"field_name": "name",
+		"label": "URL",
+		"preset": "dataset_slug",
+		"form_placeholder": "eg. my-dataset",
+    "validators": "if_empty_same_as(title) odm_dataset_if_empty_new_id odm_dataset_urlencode"
 	}, {
 		"field_name": "marc21_246",
 		"label": "Short title (alternative/varying form of title)",
