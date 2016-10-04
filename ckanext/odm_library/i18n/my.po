@@ -1,22 +1,23 @@
-# 
+#
 # Translators:
 # Theint Naing Yoon <yoon@phandeeyar.org>, 2016
 msgid ""
 msgstr ""
 "Project-Id-Version: ODM ckanext-odm_library\n"
-"POT-Creation-Date: 2016-05-17 15:21+0200\n"
-"PO-Revision-Date: 2016-05-20 07:24+0000\n"
+"POT-Creation-Date: 2016-10-04 19:06+0200\n"
+"PO-Revision-Date: 2016-10-04 19:06+0200\n"
 "Last-Translator: Theint Naing Yoon <yoon@phandeeyar.org>\n"
-"Language-Team: Burmese (http://www.transifex.com/open-development-mekong/odm-ckanext-odm_library/language/my/)\n"
+"Language-Team: Burmese (http://www.transifex.com/open-development-mekong/odm-ckanext-odm_library/"
+"language/my/)\n"
+"Language: my\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: my\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: Poedit 1.8.4\n"
+"X-Generator: Poedit 1.8.7.1\n"
 "X-Poedit-Basepath: ../../../ckanext\n"
-"X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-SearchPath-0: .\n"
 
 #: odm_library/i18n/metadata_fields.php:3
 msgid "Document type"
@@ -59,10 +60,10 @@ msgid "Conference/workshop proceedings and presentations"
 msgstr "ဆွေးနွေးပွဲများ ဆက်လက်အကောင်အထည်ဖေါ်ခြင်း နှင့် တင်ဆက်မှုများ"
 
 #: odm_library/i18n/metadata_fields.php:13
-msgid ""
-"Reports, journal articles, and research papers (including theses and "
-"dissertations)"
-msgstr "အစီရင်ခံစာများ၊ ဂျာနယ်ဆောင်းပါးများ၊ နှင့် သုတေသနစာတမ်းများ (အကြောင်းအရာတစ်ခုပေါ်လေ့လာချက်များ နှင့် သုတေသနမှတွေ့ရှိချက်များ အပါအဝင်)"
+msgid "Reports, journal articles, and research papers (including theses and dissertations)"
+msgstr ""
+"အစီရင်ခံစာများ၊ ဂျာနယ်ဆောင်းပါးများ၊ နှင့် သုတေသနစာတမ်းများ (အကြောင်းအရာတစ်ခုပေါ်လေ့လာချက်များ နှင့် သုတေသနမှတွေ့ရှိချက်များ "
+"အပါအဝင်)"
 
 #: odm_library/i18n/metadata_fields.php:14
 msgid "Company profiles"
@@ -278,83 +279,56 @@ msgstr "ပုံစံ"
 
 #: odm_library/lib/odm_library_helper.py:27
 msgid ""
-"Thank you for uploading this item. Instructions about vetting system "
-"available on "
-"https://wiki.opendevelopmentmekong.net/partners:content_review#instructions_for_default_issue_on_library_records"
-msgstr "ဤအကြောင်းအရာကို တင်ပေးသည့်အတွက်ကျေးဇူးတင်ပါတယ်။ လေ့လာစီစစ်ခြင်းစနစ်အတွက် လမ်းညွှန်ကို https://wiki.opendevelopmentmekong.net/partners:content_review#instructions_for_default_issue_on_library_records တွင်ကြည့်ရှုနိုင်သည်။"
+"Thank you for uploading this item. Instructions about vetting system available on https://wiki."
+"opendevelopmentmekong.net/partners:content_review#instructions_for_default_issue_on_library_records"
+msgstr ""
+"ဤအကြောင်းအရာကို တင်ပေးသည့်အတွက်ကျေးဇူးတင်ပါတယ်။ လေ့လာစီစစ်ခြင်းစနစ်အတွက် လမ်းညွှန်ကို https://wiki.opendevelopmentmekong."
+"net/partners:content_review#instructions_for_default_issue_on_library_records တွင်ကြည့်ရှုနိုင်သည်။"
 
-#: odm_library/templates/header.html:5
-msgid "Library"
-msgstr "စာကြည့်တိုက်"
+#~ msgid "Library"
+#~ msgstr "စာကြည့်တိုက်"
 
-#: odm_library/templates/package/base.html:5
-#: odm_library/templates/package/base.html:15
-#: odm_library/templates/package/base.html:18
-#: odm_library/templates/package/search.html:5
-#: odm_library/templates/package/search.html:13
-msgid "Library records"
-msgstr "စာကြည့်တိုက်မှတ်တမ်း"
+#~ msgid "Library records"
+#~ msgstr "စာကြည့်တိုက်မှတ်တမ်း"
 
-#: odm_library/templates/package/base.html:19
-#: odm_library/templates/package/new.html:5
-#: odm_library/templates/package/snippets/new_package_breadcrumb.html:5
-#: odm_library/templates/package/snippets/stages.html:7
-#: odm_library/templates/package/snippets/stages.html:9
-msgid "Create library record"
-msgstr "စာကြည့်တိုက်မှတ်တမ်းဖန်တီးမည်"
+#~ msgid "Create library record"
+#~ msgstr "စာကြည့်တိုက်မှတ်တမ်းဖန်တီးမည်"
 
-#: odm_library/templates/package/base_form_page.html:7
-msgid "What are Library records?"
-msgstr "စာကြည့်တိုက်မှတ်တမ်းဆိုတာဘာလဲ"
+#~ msgid "What are Library records?"
+#~ msgstr "စာကြည့်တိုက်မှတ်တမ်းဆိုတာဘာလဲ"
 
-#: odm_library/templates/package/edit_base.html:5
-msgid "View library record"
-msgstr "စာကြည့်တိုက်မှတ်တမ်းကိုကြည့်ရှုမည်"
+#~ msgid "View library record"
+#~ msgstr "စာကြည့်တိုက်မှတ်တမ်းကိုကြည့်ရှုမည်"
 
-#: odm_library/templates/package/new_package_form.html:8
-msgid "Update library record"
-msgstr "စာကြည့်တိုက်မှတ်တမ်းကို update လုပ်မည်"
+#~ msgid "Update library record"
+#~ msgstr "စာကြည့်တိုက်မှတ်တမ်းကို update လုပ်မည်"
 
-#: odm_library/templates/package/read_base.html:6
-msgid "Manage"
-msgstr "စီမံခန့်ခွဲမည်"
+#~ msgid "Manage"
+#~ msgstr "စီမံခန့်ခွဲမည်"
 
-#: odm_library/templates/package/read_base.html:15
-#: odm_library/templates/package/snippets/new_package_breadcrumb.html:4
-msgid "Library record"
-msgstr "စာကြည့်တိုက်မှတ်တမ်း"
+#~ msgid "Library record"
+#~ msgstr "စာကြည့်တိုက်မှတ်တမ်း"
 
-#: odm_library/templates/package/read_base.html:16
-msgid "Activity Stream"
-msgstr "လှုပ်ရှားမှုလမ်းကြောင်း"
+#~ msgid "Activity Stream"
+#~ msgstr "လှုပ်ရှားမှုလမ်းကြောင်း"
 
-#: odm_library/templates/package/read_base.html:17
-msgid "Related"
-msgstr "ဆက်နွှယ်မှုရှိသော"
+#~ msgid "Related"
+#~ msgstr "ဆက်နွှယ်မှုရှိသော"
 
-#: odm_library/templates/package/search.html:23
-msgid "Add library record"
-msgstr "စာကြည့်တိုက်မှတ်တမ်းသွင်းခြင်း"
+#~ msgid "Add library record"
+#~ msgstr "စာကြည့်တိုက်မှတ်တမ်းသွင်းခြင်း"
 
-#: odm_library/templates/package/snippets/package_form.html:5
-msgid "Are you sure you want to delete this dataset?"
-msgstr "ဤ dataset ကိုဖျက်ရန်သေချာပါသလား။"
+#~ msgid "Are you sure you want to delete this dataset?"
+#~ msgstr "ဤ dataset ကိုဖျက်ရန်သေချာပါသလား။"
 
-#: odm_library/templates/package/snippets/package_form.html:6
-msgid "Delete"
-msgstr "ဖျက်မည်"
+#~ msgid "Delete"
+#~ msgstr "ဖျက်မည်"
 
-#: odm_library/templates/package/snippets/search_form.html:4
-#: odm_library/templates/snippets/search_form.html:6
-msgid "Search library records..."
-msgstr "စာကြည့်တိုက်မှတ်တမ်းကို ရှာဖွေခြင်း"
+#~ msgid "Search library records..."
+#~ msgstr "စာကြည့်တိုက်မှတ်တမ်းကို ရှာဖွေခြင်း"
 
-#: odm_library/templates/package/snippets/stages.html:14
-#: odm_library/templates/package/snippets/stages.html:18
-#: odm_library/templates/package/snippets/stages.html:20
-msgid "Add data"
-msgstr "Data ထည့်သွင်းမည်"
+#~ msgid "Add data"
+#~ msgstr "Data ထည့်သွင်းမည်"
 
-#: odm_library/templates/snippets/search_form.html:12
-msgid "Submit"
-msgstr "တင်မည်"
+#~ msgid "Submit"
+#~ msgstr "တင်မည်"
