@@ -99,7 +99,7 @@
 			"vi": "Tiêu đề đầy đủ chính thức",
 			"my": "ခေါင်းစဉ်အပြည့်အစုံ"
 		},
-		"form_languages": ["en", "th", "km", "vi"],
+		"form_languages": ["en", "th", "km", "vi", "my"],
 		"form_placeholder": "Main title",
 		"form_attrs": {
       "data-module": "slug-preview-target"
@@ -128,7 +128,7 @@
 			"vi": "Tên rút gọn (tên thay thế/dạng viết khác)",
 			"my": "ခေါင်းစဉ်အတို (မူရင်းခေါင်းစဉ်နှင့်မတူသောခေါင်းစဉ်)"
 		},
-		"form_languages": ["en", "th", "km", "vi"],
+		"form_languages": ["en", "th", "km", "vi", "my"],
 		"form_snippet": "text.html",
 		"form_placeholder": "Parallel title or translation."
 	}, {
@@ -147,7 +147,7 @@
 			"vi": "Tóm tắt nội dung",
 			"my": "အနှစ်ချုပ် (အကြောင်းအရာ)"
 		},
-		"form_languages": ["en", "th", "km", "vi"],
+		"form_languages": ["en", "th", "km", "vi", "my"],
 		"form_placeholder": "Abstract or summary of book or articlee"
 	}, {
 		"field_name": "odm_spatial_range",
@@ -202,7 +202,7 @@
 			"vi": "Hạn chế truy cập và sử dụng",
 			"my": "ရယူခြင်းနှင့် အကန့်အသတ်များအသုံးပြုခြင်း"
 		},
-		"form_languages": ["en", "th", "km", "vi"],
+		"form_languages": ["en", "th", "km", "vi", "my"],
 		"form_placeholder": "A few sentences describing legal considerations for people who access the website and/or use its contents."
 	}, {
 		"field_name": "version",
@@ -239,7 +239,7 @@
 			"vi": "Liên hệ",
 			"my": "ဆက်သွယ်ရန်"
 		},
-		"form_languages": ["en", "th", "km", "vi"],
+		"form_languages": ["en", "th", "km", "vi", "my"],
 		"form_placeholder": "Contact information for the individual or organization that is responsible for or most knowledgeable about the dataset. This could be the author of a report, the contact information for the relevant department of an organization that produced a report, or the data analyst, mapper or researcher that produced a dataset or report."
 	}, {
 		"field_name": "marc21_100",
@@ -281,7 +281,7 @@
 			"vi": "Nơi xuất bản",
 			"my": "ထုတ်ဝေသည့်ရေရာ "
 		},
-		"form_languages": ["en", "th", "km", "vi"],
+		"form_languages": ["en", "th", "km", "vi", "my"],
 		"form_placeholder": "Place of publisher"
 	}, {
 		"field_name": "marc21_260b",
@@ -293,7 +293,7 @@
 			"vi": "Nhà xuất bản",
 			"my": "ထုတ်ဝေသူ"
 		},
-		"form_languages": ["en", "th", "km", "vi"],
+		"form_languages": ["en", "th", "km", "vi", "my"],
 		"form_placeholder": "Name of publishing organization"
 	}, {
 		"field_name": "marc21_260c",
@@ -310,7 +310,7 @@
 			"vi": "Đánh số trang",
 			"my": "စာမျက်နှာခွဲ"
 		},
-		"form_languages": ["en", "th", "km", "vi"],
+		"form_languages": ["en", "th", "km", "vi", "my"],
 		"form_placeholder": "Physical description (pagination)"
 	}, {
 		"field_name": "marc21_500",
@@ -322,7 +322,7 @@
 			"vi": "Chú ý",
 			"my": "အထွေထွေ မှတ်ချက်"
 		},
-		"form_languages": ["en", "th", "km", "vi"],
+		"form_languages": ["en", "th", "km", "vi", "my"],
 		"form_placeholder": "General note."
 	}, {
 		"field_name": "odm_reference_document",
@@ -359,7 +359,7 @@
 			"vi": "Tên",
 			"my": "အမည်"
 		},
-		"form_languages": ["en", "th", "km", "vi"],
+		"form_languages": ["en", "th", "km", "vi", "my"],
 		"form_placeholder": "eg. January 2011 Gold Prices"
 	}, {
 		"field_name": "description_translated",
@@ -371,7 +371,7 @@
 			"vi": "Mô tả",
 			"my": "ဖော်ပြချက်"
 		},
-		"form_languages": ["en", "th", "km", "vi"],
+		"form_languages": ["en", "th", "km", "vi", "my"],
 		"form_placeholder": "Some useful notes about the data"
 	}, {
 		"field_name": "format",
