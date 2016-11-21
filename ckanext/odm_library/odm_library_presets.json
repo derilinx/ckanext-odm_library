@@ -3,5 +3,12 @@
   "about": "ODM Library scheming field presets",
   "about_url": "http://github.com/open-data/ckanext-scheming#preset",
   "presets": [
+		{
+      "preset_name": "document_type",
+      "values": {
+        "form_snippet": "document_type.html",
+        "validators": "scheming_required"
+      }
+    }
   ]
 }

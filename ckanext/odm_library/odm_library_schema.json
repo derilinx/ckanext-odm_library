@@ -6,45 +6,8 @@
 	"dataset_fields": [{
 		"field_name": "document_type",
 		"label": "Document type",
-		"preset": "select",
-		"required": "true",
-		"choices": [{
-			"value": "advocacy_and_promotional_materials",
-			"label": "Advocacy and promotional materials"
-		}, {
-			"value": "analysis_discussion_papers_and_blogs",
-			"label": "Analysis, discussion papers, and blogs"
-		}, {
-			"value": "books_and_book_chapters",
-			"label": "Books and book chapters"
-		}, {
-			"value": "case_studies",
-			"label": "Case studies"
-		}, {
-			"value": "issue_and_policy_briefs",
-			"label": "Issue and policy briefs"
-		}, {
-			"value": "profiles_people",
-			"label": "Profiles - People"
-		}, {
-			"value": "profiles_organizations_and_projects",
-			"label": "Profiles - Organizations  and projects"
-		}, {
-			"value": "profiles_geographical_areas_and_sites",
-			"label": "Profiles - Geographical areas and sites"
-		}, {
-			"value": "conference_workshops_proceedings_and_presentations",
-			"label": "Conference/workshop proceedings and presentations"
-		}, {
-			"value": "reports_journal_articles_and_research_papers",
-			"label": "Reports, journal articles, and research papers (including theses and dissertations)"
-		}, {
-			"value": "company_profiles",
-			"label": "Company profiles"
-		}, {
-			"value": "archived_web_content",
-			"label": "Archived web content"
-		}]
+		"preset": "document_type",
+		"required": "true"
 	},{
 		"field_name": "odm_language",
 		"label": "Language of document",
