@@ -7,8 +7,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: ODM ckanext-odm_library\n"
-"POT-Creation-Date: 2016-10-04 19:06+0200\n"
-"PO-Revision-Date: 2016-10-04 19:06+0200\n"
+"POT-Creation-Date: 2016-12-06 15:36+0100\n"
+"PO-Revision-Date: 2016-12-06 15:36+0100\n"
 "Last-Translator: Linh Do <linh@nature.org.vn>\n"
 "Language-Team: Vietnamese (http://www.transifex.com/open-development-mekong/"
 "odm-ckanext-odm_library/language/vi/)\n"
@@ -292,50 +292,78 @@ msgstr ""
 "kiểm duyệt thông tin của hệ thống tại https://wiki.opendevelopmentmekong.net/"
 "partners:content_review#instructions_for_default_issue_on_library_records"
 
-#~ msgid "Library"
-#~ msgstr "Thư viện"
+#: odm_library/templates/header.html:5
+msgid "Library"
+msgstr "Thư viện"
 
-#~ msgid "Library records"
-#~ msgstr "Bản ghi lưu trữ"
+#: odm_library/templates/package/base.html:5
+#: odm_library/templates/package/base.html:15
+#: odm_library/templates/package/base.html:18
+#: odm_library/templates/package/search.html:5
+#: odm_library/templates/package/search.html:13
+msgid "Library records"
+msgstr "Bản ghi lưu trữ"
 
-#~ msgid "Create library record"
-#~ msgstr "Tạo một bản ghi thư viện"
+#: odm_library/templates/package/base.html:19
+#: odm_library/templates/package/new.html:5
+#: odm_library/templates/package/snippets/new_package_breadcrumb.html:5
+#: odm_library/templates/package/snippets/stages.html:7
+#: odm_library/templates/package/snippets/stages.html:9
+msgid "Create library record"
+msgstr "Tạo một bản ghi thư viện"
 
-#~ msgid "What are Library records?"
-#~ msgstr "Bản ghi thư viện là gì?"
+#: odm_library/templates/package/base_form_page.html:7
+msgid "What are Library records?"
+msgstr "Bản ghi thư viện là gì?"
 
-#~ msgid "View library record"
-#~ msgstr "Xem tài liệu trong thư viện"
+#: odm_library/templates/package/edit_base.html:5
+msgid "View library record"
+msgstr "Xem tài liệu trong thư viện"
 
-#~ msgid "Update library record"
-#~ msgstr "Cập nhật dữ liệu trong thư viện"
+#: odm_library/templates/package/new_package_form.html:8
+msgid "Update library record"
+msgstr "Cập nhật dữ liệu trong thư viện"
 
-#~ msgid "Manage"
-#~ msgstr "Quản lý"
+#: odm_library/templates/package/read_base.html:6
+msgid "Manage"
+msgstr "Quản lý"
 
-#~ msgid "Library record"
-#~ msgstr "Dữ liệu thư viện"
+#: odm_library/templates/package/read_base.html:15
+#: odm_library/templates/package/snippets/new_package_breadcrumb.html:4
+msgid "Library record"
+msgstr "Dữ liệu thư viện"
 
-#~ msgid "Activity Stream"
-#~ msgstr "Chuỗi hoạt động"
+#: odm_library/templates/package/read_base.html:16
+msgid "Activity Stream"
+msgstr "Chuỗi hoạt động"
 
-#~ msgid "Related"
-#~ msgstr "Có liên quan"
+#: odm_library/templates/package/read_base.html:17
+msgid "Related"
+msgstr "Có liên quan"
 
-#~ msgid "Add library record"
-#~ msgstr "Bổ sung bản ghi lưu trữ "
+#: odm_library/templates/package/search.html:23
+msgid "Add library record"
+msgstr "Bổ sung bản ghi lưu trữ "
 
-#~ msgid "Are you sure you want to delete this dataset?"
-#~ msgstr "Bạn có chắc chắn xóa dữ liệu không?"
+#: odm_library/templates/package/snippets/package_form.html:5
+msgid "Are you sure you want to delete this dataset?"
+msgstr "Bạn có chắc chắn xóa dữ liệu không?"
 
-#~ msgid "Delete"
-#~ msgstr "Xóa"
+#: odm_library/templates/package/snippets/package_form.html:6
+msgid "Delete"
+msgstr "Xóa"
 
-#~ msgid "Search library records..."
-#~ msgstr "Tìm kiếm bản ghi lưu trữ"
+#: odm_library/templates/package/snippets/search_form.html:4
+#: odm_library/templates/snippets/search_form.html:6
+msgid "Search library records..."
+msgstr "Tìm kiếm bản ghi lưu trữ"
 
-#~ msgid "Add data"
-#~ msgstr "Bổ sung dữ liệu"
+#: odm_library/templates/package/snippets/stages.html:14
+#: odm_library/templates/package/snippets/stages.html:18
+#: odm_library/templates/package/snippets/stages.html:20
+msgid "Add data"
+msgstr "Bổ sung dữ liệu"
 
-#~ msgid "Submit"
-#~ msgstr "Gửi"
+#: odm_library/templates/snippets/search_form.html:12
+msgid "Submit"
+msgstr "Gửi"
