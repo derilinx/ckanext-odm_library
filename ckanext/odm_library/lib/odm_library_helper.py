@@ -37,8 +37,6 @@ def create_default_issue_library_record(pkg_info):
 
     log.error("Action 'issue_create' not found. Please make sure that ckanext-issues plugin is installed.")
 
-session = {}
-
 def check_required_fields(package):
 	'''Checks that the package has all required fields'''
 
@@ -67,3 +65,5 @@ def check_required_fields(package):
 			log.info('invalid json: %s' % e)
 
 	return valid
+
+session = {}

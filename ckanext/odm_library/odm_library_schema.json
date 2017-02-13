@@ -95,7 +95,7 @@
 		"field_name": "odm_copyright",
 		"label": "Copyright",
 		"preset": "odm_copyright",
-		"required": "false",
+		"required": "true",
 		"help_text": "Select 'Yes', 'No', 'Unclear copyright' or 'To be determined' about the copyright of the dataset. If copyright of any type is present, describe further in Access and User Constraints."
 	}, {
 		"field_name": "odm_access_and_use_constraints",
@@ -137,7 +137,7 @@
 		"field_name": "license_id",
 		"label": "License",
 		"preset": "odm_license",
-		"required": "false",
+		"required": "true",
 		"help_text": "License definitions and additional information can be found at http://opendefinition.org/"
 	}, {
 		"field_name": "odm_contact",
