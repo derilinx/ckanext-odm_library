@@ -7,16 +7,20 @@
 		"field_name": "document_type",
 		"label": "Document type",
 		"preset": "document_type",
-		"required": "true"
+		"required": "true",
+		"validate": "true"
 	},{
 		"field_name": "odm_language",
 		"label": "Language of document",
 		"required": "true",
+		"validate": "true",
 		"form_placeholder": "Language(s) of the dataset, including resources within dataset.",
 		"preset": "odm_language"
 	}, {
 		"field_name": "title_translated",
 		"preset": "fluent_core_title_translated_single",
+		"validate": "true",
+		"multilingual": "true",
 		"label": {
 			"en": "Formal full title",
 			"th": "Formal full title",
@@ -31,6 +35,7 @@
     }
 	}, {
 		"field_name": "title",
+		"required": "true",
 		"label": "title",
 		"preset": "text_hidden",
     "form_attrs": {
@@ -39,12 +44,14 @@
 		"validators": "if_empty_same_as(name)"
 	}, {
 		"field_name": "name",
+		"required": "true",
 		"label": "URL",
 		"preset": "dataset_slug",
 		"form_placeholder": "eg. my-dataset",
     "validators": "if_empty_same_as(title) odm_dataset_if_empty_new_id odm_dataset_urlencode odm_dataset_record_does_not_exist_yet"
 	}, {
 		"field_name": "marc21_246",
+		"multilingual": "true",
 		"label": "Short title (alternative/varying form of title)",
     "label": {
 			"en": "Short title (alternative/varying form of title)",
@@ -61,10 +68,12 @@
 		"label": "Topics",
 		"preset": "odm_taxonomy",
     "required": "true",
+		"validate": "true",
 		"form_placeholder": "e.g. economy, mental health, government"
 	}, {
 		"field_name": "notes_translated",
 		"preset": "fluent_core_notes_translated_markdown_single",
+		"multilingual": "true",
 		"label": {
 			"en": "Short summary (contents)",
 			"th": "Short summary (contents)",
@@ -79,7 +88,8 @@
 		"label": "Geographic area (spatial range)",
 		"form_placeholder": "The geographic area that the dataset is relevant to (i.e. Cambodia, Laos).",
 		"preset": "odm_spatial_range",
-		"required": "true"
+		"required": "true",
+		"validate": "true"
 	}, {
 		"field_name": "odm_province",
 		"label": "Province(s)",
@@ -89,6 +99,8 @@
 		"field_name": "odm_copyright",
 		"label": "Copyright",
 		"preset": "odm_copyright",
+		"required": "true",
+		"validate": "true",
 		"help_text": "Select 'Yes', 'No', 'Unclear copyright' or 'To be determined' about the copyright of the dataset. If copyright of any type is present, describe further in Access and User Constraints."
 	}, {
 		"field_name": "odm_access_and_use_constraints",
@@ -107,11 +119,14 @@
 		"label": "Version / Edition",
 		"validators": "scheming_required unicode package_version_validator",
 		"form_placeholder": "Version of publication",
-		"required": "true"
+		"required": "true",
+		"validate": "true"
 	}, {
 		"field_name": "owner_org",
 		"label": "Organization",
-		"preset": "dataset_organization"
+		"preset": "dataset_organization",
+		"required": "true",
+		"validate": "true"
 	}, {
 		"field_name": "odm_date_uploaded",
 		"label": "Date uploaded",
@@ -126,10 +141,13 @@
 		"field_name": "license_id",
 		"label": "License",
 		"preset": "odm_license",
+		"required": "true",
+		"validate": "true",
 		"help_text": "License definitions and additional information can be found at http://opendefinition.org/"
 	}, {
 		"field_name": "odm_contact",
     "preset": "fluent_markdown_single",
+		"multilingual": "true",
 		"label": {
 			"en": "Contact",
 			"th": "ข้อมูลติดต่อ",
@@ -172,6 +190,7 @@
 	}, {
 		"field_name": "marc21_260a",
     "preset": "fluent_text_single",
+		"multilingual": "true",
     "label": {
 			"en": "Publication place",
 			"th": "Publication place",
@@ -184,6 +203,7 @@
 	}, {
 		"field_name": "marc21_260b",
     "preset": "fluent_text_single",
+		"multilingual": "true",
     "label": {
 			"en": "Publisher",
 			"th": "ผู้พิมพ์",
@@ -201,6 +221,7 @@
 	}, {
 		"field_name": "marc21_300",
     "preset": "fluent_text_single",
+		"multilingual": "true",
 		"label": {
 			"en": "Pagination",
 			"th": "การให้เลขหน้า",
@@ -213,6 +234,7 @@
 	}, {
 		"field_name": "marc21_500",
     "preset": "fluent_markdown_single",
+		"multilingual": "true",
 		"label": {
 			"en": "General note",
 			"th": "หมายเหตุทั่วไป",
@@ -228,18 +250,26 @@
 		"form_placeholder": "e.g Tong_Min_Group_Engineering__21.06.2011.pdf"
 	}, {
 		"field_name": "maintainer",
+		"required": "true",
+		"validate": "true",
 		"label": "Maintainer",
     "preset": "auto_maintainer"
 	}, {
 		"field_name": "maintainer_email",
+		"required": "true",
+		"validate": "true",
 		"label": "Maintainer email",
     "preset": "auto_maintainer_email"
 	}, {
 		"field_name": "author",
+		"required": "true",
+		"validate": "true",
 		"label": "Author",
     "preset": "auto_author"
 	}, {
 		"field_name": "author_email",
+		"required": "true",
+		"validate": "true",
 		"label": "Author email",
     "preset": "auto_author_email"
 	}],
@@ -250,6 +280,8 @@
 	}, {
 		"field_name": "name_translated",
 		"preset": "fluent_core_res_name_translated_single",
+		"validate": "true",
+		"multilingual": "true",
 		"label": {
 			"en": "Name",
 			"th": "Name",
@@ -262,6 +294,8 @@
 	}, {
 		"field_name": "description_translated",
 		"preset": "fluent_core_res_description_translated_markdown_single",
+		"validate": "true",
+		"multilingual": "true",
 		"label": {
 			"en": "Description",
 			"th": "Description",
@@ -278,7 +312,7 @@
 	}, {
 		"field_name": "odm_language",
     "label": "Resource's languages",
-		"required": "true",
+		"validate": "true",
 		"form_placeholder": "Language(s) of the resource.",
 		"preset": "odm_language"
 	}]

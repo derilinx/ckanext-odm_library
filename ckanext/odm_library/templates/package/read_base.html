@@ -11,11 +11,30 @@
 {% endblock %}
 
 {% block content_primary_nav %}
-{% if dataset_type == 'library_record' %}
-  {{ h.build_nav_icon('odm_library_read', _('Library record'), id=pkg.name) }}
-  {{ h.build_nav_icon('dataset_activity', _('Activity Stream'), id=pkg.name) }}
-  {{ h.build_nav_icon('related_list', _('Related'), id=pkg.name) }}
-{% else %}
-  {{super()}}
-{% endif%}
+	{% if dataset_type == 'library_record' %}
+	  {{ h.build_nav_icon('odm_library_read', _('Library record'), id=pkg.name) }}
+	  {{ h.build_nav_icon('dataset_activity', _('Activity Stream'), id=pkg.name) }}
+	  {{ h.build_nav_icon('related_list', _('Related'), id=pkg.name) }}
+	{% else %}
+	  {{super()}}
+	{% endif%}
+{% endblock %}
+
+{% block secondary_content %}
+
+	{% if dataset_type == 'library_record' %}
+		{% set missing_library = h.odm_library_validate_fields(pkg) %}
+		{% if missing_library["package"] or missing_library["resources"] %}
+			{% block inconsistency_disclaimer_library %}
+				<h2 class="module-heading"><i class="icon-alert"></i> {{ _("Record metadata not complete!!") }}</h2>
+				<div class="disclaimer">
+					<p>{{ _('This publication is missing some mandatory fields, please complete:') }}</p>
+					<p>{{ h.odm_library_validate_fields(pkg) }}</p>
+				</div>
+			{% endblock %}
+		{% endif %}
+	{% endif %}
+
+	{{super()}}
+
 {% endblock %}
