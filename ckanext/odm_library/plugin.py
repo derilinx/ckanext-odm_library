@@ -59,7 +59,7 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 
 		return {
 			'odm_library_get_dataset_type': odm_library_helper.get_dataset_type,
-			'odm_library_check_required_fields': odm_library_helper.check_required_fields
+			'odm_library_validate_fields': odm_library_helper.validate_fields
 		}
 
 	def after_create(self, context, pkg_dict):

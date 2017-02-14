@@ -23,13 +23,13 @@
 {% block secondary_content %}
 
 	{% if dataset_type == 'library_record' %}
-		{% set missing_library = h.odm_library_check_required_fields(pkg) %}
+		{% set missing_library = h.odm_library_validate_fields(pkg) %}
 		{% if missing_library["package"] or missing_library["resources"] %}
 			{% block inconsistency_disclaimer_library %}
 				<h2 class="module-heading"><i class="icon-alert"></i> {{ _("Record metadata not complete!!") }}</h2>
 				<div class="disclaimer">
 					<p>{{ _('This publication is missing some mandatory fields, please complete:') }}</p>
-					<p>{{ h.odm_library_check_required_fields(pkg) }}</p>
+					<p>{{ h.odm_library_validate_fields(pkg) }}</p>
 				</div>
 			{% endblock %}
 		{% endif %}
