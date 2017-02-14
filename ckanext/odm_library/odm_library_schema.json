@@ -313,7 +313,6 @@
 		"field_name": "odm_language",
     "label": "Resource's languages",
 		"validate": "true",
-		"required": "true",
 		"form_placeholder": "Language(s) of the resource.",
 		"preset": "odm_language"
 	}]
