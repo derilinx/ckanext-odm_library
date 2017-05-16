@@ -22,7 +22,7 @@
 
 {% block secondary_content %}
 
-	{% if dataset_type == 'library_record' %}
+	{% if dataset_type == 'library_record' and c.userobj %}
 		{% set missing_library = h.odm_library_validate_fields(pkg) %}
 		{% if missing_library["package"] or missing_library["resources"] %}
 			{% block inconsistency_disclaimer_library %}
