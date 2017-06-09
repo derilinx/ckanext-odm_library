@@ -4,7 +4,7 @@
   {% if form_style != 'edit' %}
     {{ super() }}
   {% else %}
-		{% if pkg.type == 'library_record' %}
+		{% if dataset_type == 'library_record' %}
 			{{ _('Update library record') }}
 		{% else %}
 			{{ super() }}

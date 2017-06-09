@@ -1,7 +1,7 @@
 {% ckan_extends %}
 
 {% block subtitle %}
-	{% if pkg.type == 'library_record' %}
+	{% if dataset_type == 'library_record' %}
 		{{ _('Library records') }}
 	{% else %}
 		{{ super() }}
@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block breadcrumb_content %}
-	{% if pkg.type == 'library_record' %}
+	{% if dataset_type == 'library_record' %}
 		{% if pkg %}
 			{% set dataset = pkg.title or pkg.name %}
 			<li>{% link_for _('Library records'), controller='package', type='library_record', action='search' %}</li>

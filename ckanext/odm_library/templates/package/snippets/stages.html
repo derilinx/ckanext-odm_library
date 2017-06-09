@@ -1,6 +1,6 @@
 {% ckan_extends %}
 
-{% if pkg.type == 'library_record' %}
+{% if dataset_type == 'library_record' %}
 <ol class="stages {{ class }}">
 	<li class="first {{ s1 }}">
 		{% if s1 != 'complete' %}
