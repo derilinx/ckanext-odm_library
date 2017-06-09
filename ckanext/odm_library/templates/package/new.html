@@ -1,7 +1,7 @@
 {% ckan_extends %}
 
 {% block subtitle %}
-	{% if dataset_type == 'library_record' %}
+	{% if pkg.type == 'library_record' %}
 		{{ _('Create library record') }}
 	{% else %}
 		{{ super() }}

@@ -2,7 +2,7 @@
 
 {% block content_action %}
   {% if h.check_access('package_update', {'id':pkg.id }) %}
-    {% if dataset_type == 'library_record' %}
+    {% if pkg.type == 'library_record' %}
       {% link_for _('Manage'), controller='package', type='library_record', action='edit', id=pkg.name, class_='btn', icon='wrench' %}
     {% else %}
       {{super()}}
@@ -11,7 +11,7 @@
 {% endblock %}
 
 {% block content_primary_nav %}
-	{% if dataset_type == 'library_record' %}
+	{% if pkg.type == 'library_record' %}
 	  {{ h.build_nav_icon('odm_library_read', _('Library record'), id=pkg.name) }}
 	  {{ h.build_nav_icon('dataset_activity', _('Activity Stream'), id=pkg.name) }}
 	  {{ h.build_nav_icon('related_list', _('Related'), id=pkg.name) }}
@@ -22,7 +22,7 @@
 
 {% block secondary_content %}
 
-	{% if dataset_type == 'library_record' and c.userobj %}
+	{% if pkg.type == 'library_record' and c.userobj %}
 		{% set missing_library = h.odm_library_validate_fields(pkg) %}
 		{% if missing_library["package"] or missing_library["resources"] %}
 			{% block inconsistency_disclaimer_library %}
