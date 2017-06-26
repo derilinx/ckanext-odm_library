@@ -70,7 +70,7 @@ class OdmLibraryPlugin(plugins.SingletonPlugin, toolkit.DefaultDatasetForm):
 			log.debug('after_create: %s', pkg_dict['name'])
 
 			# Create default Issue
-			review_system = h.asbool(config.get("ckanext.issues.review_system", False))
+			review_system = toolkit.asbool(config.get("ckanext.issues.review_system", False))
 			if review_system:
 				if pkg_dict['type'] == 'library_record':
 					odm_library_helper.create_default_issue_library_record(pkg_dict)
